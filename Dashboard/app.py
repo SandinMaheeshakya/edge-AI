@@ -20,6 +20,10 @@ def index():
 def signup():
     return render_template('signup.html')
 
+@app.route('/patients')
+def patients():
+    return render_template('patients.html')
+
 
 # Route for the sign-in page (sign.html)
 @app.route('/sign', methods=['GET', 'POST'])
