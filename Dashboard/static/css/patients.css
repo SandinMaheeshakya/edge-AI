@@ -21,7 +21,7 @@ body {
     width: 100%; /* Ensures the card takes full width of its grid cell */
     max-width: 350px; /* Max width for each card */
     padding: 20px;
-    background: linear-gradient(135deg, #6e7dff, #00bcd4); /* Gradient background */
+    background: #ffffff; /* Gradient background */
     border-radius: 15px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -35,7 +35,7 @@ body {
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #00bcd4, #6e7dff); /* Color change on hover */
+    background: #FFFFF7; /* Color change on hover */
 }
 
 .card img {
@@ -50,12 +50,12 @@ body {
 .card h3 {
     font-size: 18px;
     margin: 5px 0;
-    color: #fff; /* White text for the name */
+    color: #000000; /* White text for the name */
 }
 
 .card p {
     font-size: 14px;
-    color: #f1f1f1; /* Lighter text for the position */
+    color: #000000; /* Lighter text for the position */
     margin-bottom: 10px;
 }
 
@@ -74,12 +74,12 @@ body {
 .status div span {
     font-weight: bold;
     display: block;
-    color: #fff; /* White text for the status labels */
+    color: #000000; /* White text for the status labels */
 }
 
 .status div small {
     font-size: 12px;
-    color: #f1f1f1; /* Lighter text for the status details */
+    color: #000000; /* Lighter text for the status details */
 }
 
 /* Modal background */

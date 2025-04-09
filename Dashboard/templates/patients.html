@@ -151,55 +151,23 @@
 
 
             <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                   <div id="employeeContainer" class="container"></div>
-
-                    <!-- Modal -->
-                    <div id="employeeModal" class="modal">
-                        <div class="modal-content">
-                            <span class="close-btn" onclick="closeModal()">×</span>
-                            <h2 id="empName">Employee Name</h2>
-                            <p id="empPosition">Employee Position</p>
-                            <h3>Health Issues:</h3>
-                            <ul id="empHealth"></ul>
-
-                            <!-- Oxygen Level Charts -->
-                            <div class="container-fluid pt-4 px-4">
-                                <div class="row g-4">
-                                    <div class="col-sm-12 col-xl-6">
-                                        <div class="bg-light text-center rounded p-4">
-                                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                                <h6 class="mb-0">Oxygen Level Trends</h6>
-                                            </div>
-                                            <canvas id="oxygen-trends"></canvas>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 col-xl-6">
-                                        <div class="bg-light text-center rounded p-4">
-                                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                                <h6 class="mb-0">Oxygen Level Statistics</h6>
-                                            </div>
-                                            <canvas id="oxygen-statistics"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <h2 class="text-primary mb-0">Patients Data</h2>
+                <div class="container mt-4">
+                    <!-- Render the patients table dynamically -->
+                    <div>
+                        {{ patients_data | safe }}
                     </div>
                 </div>
+               </div>
             </div>
-
-
-
-
-
-        </div>
         <!-- Content End -->
-
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
+
+
+
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
