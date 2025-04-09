@@ -1,32 +1,65 @@
-import redis
-import json
-import numpy as np
-import boto3
+import pandas as pd
+import joblib
+import logging
+import colorlog
+import os
+import time
+from dotenv import load_dotenv
 
-# Connect to Redis
-r = redis.Redis(host='localhost', port=6379, db=0, decode_responses=True)
+# Script Configuration
+# .env file load
+BASEDIR = os.path.abspath(os.path.dirname(__file__))
+load_dotenv(os.path.join(BASEDIR, '.env'),override=True)
 
-# Set up AWS S3
-s3 = boto3.client('s3', aws_access_key_id="YOUR_ACCESS_KEY", aws_secret_access_key="YOUR_SECRET_KEY")
-BUCKET_NAME = "your-s3-bucket"
+"""Logger Configurations"""
+formatter = colorlog.ColoredFormatter(
+    "%(log_color)s%(asctime)s - %(levelname)s - %(message)s",  # Format
+    datefmt="%Y-%m-%d %H:%M:%S",
+    reset=True,  
+    log_colors={
+        'DEBUG': 'cyan',
+        'INFO': 'light_green',
+        'WARNING': 'yellow',
+        'ERROR': 'red',
+        'CRITICAL': 'bold_red',
+    },
+    secondary_log_colors={},
+    style='%'
+)
 
-# Load TensorFlow Lite Model
-interpreter = tflite.Interpreter(model_path="model.tflite")
-interpreter.allocate_tensors()
+console_handler = colorlog.StreamHandler()
+console_handler.setFormatter(formatter)
+file_handler = logging.FileHandler(os.getenv("ML_SERVICE_LOG"))
+file_handler.setFormatter(logging.Formatter(os.getenv("LOGGING_FORMAT")))
 
-def process_data(sensor_value):
-    input_data = np.array([sensor_value], dtype=np.float32).reshape(1, 1)
-    interpreter.set_tensor(interpreter.get_input_details()[0]['index'], input_data)
-    interpreter.invoke()
-    output_data = interpreter.get_tensor(interpreter.get_output_details()[0]['index'])
-    return float(output_data[0][0])
+# Configure logging with both handlers
+logging.basicConfig(
+    level=logging.INFO,
+    handlers=[console_handler, file_handler]
+)
 
-while True:
-    data = r.lpop("sensor_queue")  # Fetch data from Redis queue
-    if data:
-        sensor_data = json.loads(data)
-        prediction = process_data(sensor_data["value"])
+logger = logging.getLogger(__name__)
 
-        # Upload to S3
-        s3.put_object(Body=json.dumps({"sensor_value": sensor_data["value"], "prediction": prediction}), Bucket=BUCKET_NAME, Key="data.json")
-        print(f"Processed and uploaded: {sensor_data['value']} -> {prediction}")
+def run_health_classification_model(data):
+    """
+    Run the health classification model on the provided data.
+
+    Args:
+        data (pd.DataFrame): Input data for prediction.
+
+    Returns:
+        int: Predicted class label.
+    """
+    try:
+        # Load the model
+        model = joblib.load(os.getenv("MODEL_PATH"))
+
+        # Predict
+        prediction = model.predict(data)
+        logger.info(f"Prediction: {prediction[0]}")
+        return prediction[0]
+    except Exception as e:
+        logger.error(f"Error in running model: {e}")
+        return None
+    
+                                                                                                           
