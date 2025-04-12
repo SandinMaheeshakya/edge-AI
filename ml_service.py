@@ -3,7 +3,9 @@ import joblib
 import logging
 import colorlog
 import os
+import boto3
 import time
+from io import StringIO
 import redis
 import json
 from dotenv import load_dotenv
@@ -45,9 +47,6 @@ logger = logging.getLogger(__name__)
 
 """Model Configurations"""
 health_classification_model = joblib.load(os.getenv("MODEL_PATH"))
-
-"""Amazon Configurations"""
-
 
 """Redis Configurations"""
 redis_client = redis.Redis(host=os.getenv("REDIS_HOST"), port=os.getenv("REDIS_PORT"), db=os.getenv("REDIS_DB"))
@@ -138,6 +137,30 @@ def run_health_classification_model(data,device_id):
         logger.error(f"Error in running Health Classification model: {e}")
         return None
 
+def upload_data_s3(updated_df):
+    try:
+        logger.info("Starting insert data to S3 Bucket.")
+        # Initialize S3 client
+        s3 = boto3.client('s3')
 
-def upload_data_s3():
-    
+        bucket_name = os.getenv("S3_BUCKET")
+        file_key = os.getenv("CSV_FILE")
+
+        try:
+            obj = s3.get_object(Bucket = bucket_name, Key = file_key)
+            existing_df = pd.read_csv(obj['Body'])
+
+        except s3.exceptions.NoSuchKey:
+            existing_df = pd.DataFrame()  # File doesn't exist yet
+
+        updated_df = pd.concat([existing_df, updated_df], ignore_index=True)
+
+        csv_buffer = StringIO()
+        updated_df.to_csv(csv_buffer, index=False)
+
+        s3.put_object(Bucket=bucket_name, Key=file_key, Body=csv_buffer.getvalue())
+        
+        logger.info("Sucessfully inserted data into S3 Bucket.")
+
+    except Exception as e:
+        logger.error(f"Cannot upload data to S3 due to :- {e}")

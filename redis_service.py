@@ -61,7 +61,6 @@ def on_message(client, userdata, msg):
 
         # Try getting device_id from payload or topic
         device_id = payload.get('device_id') or topic_parts[-1]
-
         temperature = payload.get('temperature')
         oxygen_rate = payload.get('oxygen_rate')
         heart_rate = payload.get('heart_rate')
@@ -77,6 +76,7 @@ def on_message(client, userdata, msg):
 
         # Store time-series data
         redis_client.rpush(f'esp32:{device_id}:history', json.dumps({
+            'device_id' : device_id,
             'timestamp': timestamp,
             'temperature': temperature,
             'oxygen_rate': oxygen_rate,
