@@ -4,7 +4,10 @@ import logging
 import colorlog
 import os
 import time
+import redis
+import json
 from dotenv import load_dotenv
+from sklearn.preprocessing import MinMaxScaler
 
 # Script Configuration
 # .env file load
@@ -40,14 +43,71 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-
 """Model Configurations"""
 health_classification_model = joblib.load(os.getenv("MODEL_PATH"))
 
+"""Amazon Configurations"""
+
+
+"""Redis Configurations"""
+redis_client = redis.Redis(host=os.getenv("REDIS_HOST"), port=os.getenv("REDIS_PORT"), db=os.getenv("REDIS_DB"))
+
+def get_current_active_devices():
+
+    try:
+        logger.info("Getting the current active devices")
+        keys = redis_client.keys('esp32:*:latest')
+        distinct_ids = set()
+
+        for key in keys:
+            key_str = key.decode('utf-8') if isinstance(key, bytes) else key
+            parts = key_str.split(':')
+            if len(parts) == 3:
+                distinct_ids.add(parts[1])
+
+        return distinct_ids
+
+    except Exception as e:
+        logger.error(f"Cannot get current active devices due to :- {e}")
+
+        
+def retrieve_redis_data(device_id):
+    try:
+        logger.info(f"Started retrieving information from Redis for the device id:- {device_id}")
+        # Redis keys
+        latest_key = f'esp32:{device_id}:latest'
+
+        # Fetch latest reading
+        latest_data = redis_client.hgetall(latest_key)
+        
+        if latest_data:
+            logger.info(f"Sucessfully retrieved the latest health data for the device_id :- {device_id}")
+
+        return latest_data
+
+    except Exception as e:
+        logger.error(f"Cannot retrieve redis data due to :- {e}")
+
+def preprocess_data(retrieved_data):
+    """This function processes the data coming through MQTT Broker"""
+    try:
+        logger.info("Starting the pre-process of MQTT Data")
+        retrieved_data = [json.loads(item.decode('utf-8')) for item in retrieved_data]
+        retrieved_df = pd.DataFrame(retrieved_data)
+
+        # Standarizing the data
+        scaler = MinMaxScaler()
+        retrieved_df[['heart_rate', 'oxygen_saturation']] = scaler.fit_transform(retrieved_df[['heart_rate', 'oxygen_saturation']])
+
+        return retrieved_df
+
+    except Exception as e:
+        logger.error(f"Cannot pre-process redis data due to :- {e}")
+    
 
 def run_health_classification_model(data,device_id):
     """
-    This will load the SVC model and runs the health condition classification 
+    This will load the health classification model and runs the health condition classification 
     for the patient
 
     Args:
@@ -56,14 +116,12 @@ def run_health_classification_model(data,device_id):
     Returns:
         int: Predicted class label.
     """
-    
     try:
         logger.info(f"Health Classification Model Triggered at {pd.Timestamp.now()}")
-        # Standarizing the data
 
         # Load the model
         # Predict
-        prediction = health_classification_model.predict(data)
+        prediction = health_classification_model.predict(data[['heart_rate', 'oxygen_saturation']])
         logger.info(f"Prediction: {prediction[0]}")
         
         if prediction[0] == 0:
@@ -72,8 +130,14 @@ def run_health_classification_model(data,device_id):
         elif prediction[0] == 1:
             logger.info(f"Patient for the device_id :- {device_id} is Not Healthy Please Checkup!")
 
-        return prediction[0]
-    
+        data['health_condition'] = prediction[0]
+
+        return data
+
     except Exception as e:
-        logger.error(f"Error in running model: {e}")
+        logger.error(f"Error in running Health Classification model: {e}")
         return None
+
+
+def upload_data_s3():
+    
