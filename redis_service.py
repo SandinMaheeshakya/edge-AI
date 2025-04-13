@@ -2,6 +2,7 @@ import json
 import redis
 import paho.mqtt.client as mqtt
 import time
+import pandas as pd
 import logging
 import colorlog
 import os
@@ -43,12 +44,12 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Connect to Redis
-redis_client = redis.Redis(host='localhost', port=6379, db=0)
+redis_client = redis.Redis(host=os.getenv("REDIS_HOST"), port=os.getenv("REDIS_PORT"), db=os.getenv("REDIS_DB"))
 
 # MQTT settings
 MQTT_BROKER = 'localhost'
 MQTT_PORT = 1883
-MQTT_TOPIC = 'esp32/data/#'  # wildcard to listen to all devices
+MQTT_TOPIC = 'esp32/data/#'  
 
 def on_connect(client, userdata, flags, rc):
     print(f"[MQTT] Connected with result code {rc}")
@@ -62,14 +63,15 @@ def on_message(client, userdata, msg):
         # Try getting device_id from payload or topic
         device_id = payload.get('device_id') or topic_parts[-1]
         temperature = payload.get('temperature')
-        oxygen_rate = payload.get('oxygen_rate')
+        oxygen_rate = payload.get('oxygen_saturation')
         heart_rate = payload.get('heart_rate')
 
-        timestamp = int(time.time())  
+        timestamp = str(pd.Timestamp.now())
         # Store the latest reading
         redis_client.hset(f'esp32:{device_id}:latest', mapping={
+            'device_id' : device_id,
             'temperature': temperature,
-            'oxygen_rate': oxygen_rate,
+            'oxygen_saturation': oxygen_rate,
             'heart_rate': heart_rate,
             'timestamp': timestamp
         })
@@ -79,7 +81,7 @@ def on_message(client, userdata, msg):
             'device_id' : device_id,
             'timestamp': timestamp,
             'temperature': temperature,
-            'oxygen_rate': oxygen_rate,
+            'oxygen_saturation': oxygen_rate,
             'heart_rate': heart_rate
         }))
 
