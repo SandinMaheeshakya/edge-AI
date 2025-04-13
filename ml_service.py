@@ -63,7 +63,8 @@ def get_current_active_devices():
             parts = key_str.split(':')
             if len(parts) == 3:
                 distinct_ids.add(parts[1])
-
+        
+        logger.info(f"Current Active Devices :- {distinct_ids}")
         return distinct_ids
 
     except Exception as e:
@@ -82,6 +83,11 @@ def retrieve_redis_data(device_id):
         if latest_data:
             logger.info(f"Sucessfully retrieved the latest health data for the device_id :- {device_id}")
 
+            latest_data = {k.decode(): v.decode() for k, v in latest_data.items()}
+            latest_data = [json.dumps(latest_data).encode('utf-8')]
+
+            logger.info(f"latest data for the device id {device_id} :- {latest_data}")
+
         return latest_data
 
     except Exception as e:
@@ -97,6 +103,9 @@ def preprocess_data(retrieved_data):
         # Standarizing the data
         scaler = MinMaxScaler()
         retrieved_df[['heart_rate', 'oxygen_saturation']] = scaler.fit_transform(retrieved_df[['heart_rate', 'oxygen_saturation']])
+        logger.info("Sucessfully scaled the data.")
+
+        logger.info("Sucessfully pre-processed the data to feed into the ML and DL Models.")
 
         return retrieved_df
 
@@ -164,3 +173,18 @@ def upload_data_s3(updated_df):
 
     except Exception as e:
         logger.error(f"Cannot upload data to S3 due to :- {e}")
+
+
+
+active_devices = get_current_active_devices()
+
+
+if __name__ == "__main__":
+
+    while True:
+        for device in active_devices:
+            dataset  = preprocess_data(retrieve_redis_data(device))
+            print(dataset)
+            data_with_health_predictions = run_health_classification_model(dataset,dataset['device_id'][0])
+
+        time.sleep(30)
