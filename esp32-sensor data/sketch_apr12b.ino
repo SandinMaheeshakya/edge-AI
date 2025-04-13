@@ -18,8 +18,8 @@ int32_t heartRate;
 int8_t validHeartRate;
 
 // WiFi and MQTT settings
-const char* ssid = "Dialog 4G";         // Replace with your Wi-Fi SSID
-const char* password = "4RNAJBYMBTF"; // Replace with your Wi-Fi password
+const char* ssid = "Dialog 4G";         // Wi-Fi SSID
+const char* password = "4RNAJBYMBTF"; // Wi-Fi password
 const char* mqtt_server = "test.mosquitto.org"; // Public MQTT broker
 const int mqtt_port = 1883;  // Default MQTT port (non-SSL)
 
@@ -70,7 +70,7 @@ void setup() {
     while (1);
   }
 
-  particleSensor.setup(); // Use default settings
+  particleSensor.setup(); 
   particleSensor.setPulseAmplitudeRed(0x0A); // Low brightness
   particleSensor.setPulseAmplitudeIR(0x0A); // Low brightness
   
@@ -111,10 +111,10 @@ void loop() {
     client.publish(irValueTopic, irValueStr.c_str());
 
     // Print to Serial Monitor
-    Serial.print("💓 Heart Rate: ");
+    Serial.print("Heart Rate: ");
     Serial.print(heartRate);
     Serial.print(" BPM  |  ");
-    Serial.print("🩸 SpO2: ");
+    Serial.print("SpO2: ");
     Serial.print(spo2);
     Serial.print(" %  |  ");
     Serial.print("IR Value: ");
