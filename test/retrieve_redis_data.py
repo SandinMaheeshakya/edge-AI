@@ -6,7 +6,7 @@ import pandas as pd
 redis_client = redis.Redis(host='localhost', port=6379, db=0)
 
 # Device ID to fetch data for
-device_id = "esp32_001"
+device_id = "esp32_002"
 
 # Redis keys
 latest_key = f'esp32:{device_id}:latest'
