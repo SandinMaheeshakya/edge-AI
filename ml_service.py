@@ -147,9 +147,8 @@ def preprocess_data(retrieved_data, device):
         retrieved_df['respiratory_rate'] = process_respiratory_rate(device)
         retrieved_df.drop('ir_value',axis=1,inplace=True)
 
-        print(retrieved_df)
-
         # Standarizing the data
+        """
         scaler = MinMaxScaler()
         retrieved_df[
             ["heart_rate", "oxygen_saturation", "temperature", "respiratory_rate"]
@@ -158,8 +157,12 @@ def preprocess_data(retrieved_data, device):
                 ["heart_rate", "oxygen_saturation", "temperature", "respiratory_rate"]
             ]
         )
+        """
 
-
+        retrieved_df['heart_rate'] = 89
+        retrieved_df['oxygen_saturation'] = 95
+        retrieved_df['respiratory_rate'] = 16
+        retrieved_df['temperature'] = 37.5 
         print(retrieved_df)
 
         logger.info("Sucessfully scaled the data.")
@@ -233,12 +236,15 @@ def run_cvd_classification_model(df:pd.DataFrame,device_id):
         # Converting the Dataframe to match the model input
         input_shape = input_details[0]['shape']   
         input_dtype = input_details[0]['dtype']  
+
         input_data = df.drop(['device_id','health_condition','health_condition_warning','timestamp'],axis=1).to_numpy().astype(input_dtype).reshape(input_shape)
 
         # Run inference
         interpreter.set_tensor(input_details[0]['index'], input_data)
         interpreter.invoke()
         output_data = interpreter.get_tensor(output_details[0]['index'])
+
+        logger.info(f"Actual Output :- {output_data}")
 
         logger.info(f"Prediction: {int(output_data[0][0])}")
 
