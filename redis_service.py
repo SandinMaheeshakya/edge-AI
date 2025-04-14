@@ -47,9 +47,9 @@ logger = logging.getLogger(__name__)
 redis_client = redis.Redis(host=os.getenv("REDIS_HOST"), port=os.getenv("REDIS_PORT"), db=os.getenv("REDIS_DB"))
 
 # MQTT settings
-MQTT_BROKER = 'localhost'
-MQTT_PORT = 1883
-MQTT_TOPIC = 'esp32/data/#'  
+MQTT_BROKER = os.getenv("MQTT_BROKER")
+MQTT_PORT = int(os.getenv("MQTT_PORT"))
+MQTT_TOPIC = os.getenv("MQTT_TOPIC")
 
 def on_connect(client, userdata, flags, rc):
     print(f"[MQTT] Connected with result code {rc}")
@@ -62,14 +62,17 @@ def on_message(client, userdata, msg):
 
         # Try getting device_id from payload or topic
         device_id = payload.get('device_id') or topic_parts[-1]
+        ir_value  = payload.get('ir_value')
         temperature = payload.get('temperature')
         oxygen_rate = payload.get('oxygen_saturation')
         heart_rate = payload.get('heart_rate')
 
         timestamp = str(pd.Timestamp.now())
+        
         # Store the latest reading
         redis_client.hset(f'esp32:{device_id}:latest', mapping={
             'device_id' : device_id,
+            'ir_value' : ir_value,
             'temperature': temperature,
             'oxygen_saturation': oxygen_rate,
             'heart_rate': heart_rate,
@@ -79,6 +82,7 @@ def on_message(client, userdata, msg):
         # Store time-series data
         redis_client.rpush(f'esp32:{device_id}:history', json.dumps({
             'device_id' : device_id,
+            'ir_value' : ir_value,
             'timestamp': timestamp,
             'temperature': temperature,
             'oxygen_saturation': oxygen_rate,
