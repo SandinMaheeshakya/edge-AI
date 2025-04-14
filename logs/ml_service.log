@@ -5416,3 +5416,1979 @@
 2025-04-14 15:32:23,772 - INFO - Actual Output :- [[1.]]
 2025-04-14 15:32:23,772 - INFO - Prediction: 1
 2025-04-14 15:32:23,772 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:49:04,824 - INFO - Getting the current active devices
+2025-04-14 15:49:04,871 - INFO - Current Active Devices :- {'esp32_001'}
+2025-04-14 15:49:04,873 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:49:04,874 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:49:04,874 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:49:04,874 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:49:04,878 - INFO - Starts processing respiratory rate
+2025-04-14 15:49:04,878 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:49:04,888 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:49:04,911 - INFO - Sucessfully scaled the data.
+2025-04-14 15:49:04,911 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:49:04,915 - INFO - Health Classification Model Triggered at 2025-04-14 15:49:04.911564
+2025-04-14 15:49:04,918 - INFO - Prediction: 0
+2025-04-14 15:49:04,918 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:49:04,923 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:49:04.923692
+2025-04-14 15:49:05,036 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:49:05,037 - INFO - Prediction: 1
+2025-04-14 15:49:05,037 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:49:35,046 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:49:35,050 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:49:35,050 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:49:35,050 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:49:35,051 - INFO - Starts processing respiratory rate
+2025-04-14 15:49:35,052 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:49:35,054 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:49:35,059 - INFO - Sucessfully scaled the data.
+2025-04-14 15:49:35,059 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:49:35,059 - INFO - Health Classification Model Triggered at 2025-04-14 15:49:35.059607
+2025-04-14 15:49:35,061 - INFO - Prediction: 0
+2025-04-14 15:49:35,061 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:49:35,066 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:49:35.066764
+2025-04-14 15:49:35,068 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:49:35,068 - INFO - Prediction: 1
+2025-04-14 15:49:35,068 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:50:05,076 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:50:05,077 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:50:05,078 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:50:05,078 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:50:05,078 - INFO - Starts processing respiratory rate
+2025-04-14 15:50:05,079 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:50:05,081 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:50:05,086 - INFO - Sucessfully scaled the data.
+2025-04-14 15:50:05,086 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:50:05,086 - INFO - Health Classification Model Triggered at 2025-04-14 15:50:05.086996
+2025-04-14 15:50:05,088 - INFO - Prediction: 0
+2025-04-14 15:50:05,088 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:50:05,095 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:50:05.094053
+2025-04-14 15:50:05,096 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:50:05,097 - INFO - Prediction: 1
+2025-04-14 15:50:05,097 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:50:35,106 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:50:35,110 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:50:35,111 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:50:35,111 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:50:35,112 - INFO - Starts processing respiratory rate
+2025-04-14 15:50:35,112 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:50:35,116 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:50:35,122 - INFO - Sucessfully scaled the data.
+2025-04-14 15:50:35,122 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:50:35,123 - INFO - Health Classification Model Triggered at 2025-04-14 15:50:35.122923
+2025-04-14 15:50:35,125 - INFO - Prediction: 0
+2025-04-14 15:50:35,126 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:50:35,131 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:50:35.131470
+2025-04-14 15:50:35,133 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:50:35,134 - INFO - Prediction: 1
+2025-04-14 15:50:35,134 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:51:12,807 - INFO - Getting the current active devices
+2025-04-14 15:51:12,831 - INFO - Current Active Devices :- {'esp32_001'}
+2025-04-14 15:51:12,831 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:51:12,833 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:51:12,833 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:51:12,834 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:51:12,838 - INFO - Starts processing respiratory rate
+2025-04-14 15:51:12,838 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:51:12,845 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:51:12,866 - INFO - Sucessfully scaled the data.
+2025-04-14 15:51:12,866 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:51:12,869 - INFO - Health Classification Model Triggered at 2025-04-14 15:51:12.867352
+2025-04-14 15:51:12,873 - INFO - Prediction: 0
+2025-04-14 15:51:12,874 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:51:12,880 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:51:12.880128
+2025-04-14 15:51:12,997 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:51:12,997 - INFO - Prediction: 1
+2025-04-14 15:51:12,997 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:51:18,006 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:51:18,008 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:51:18,008 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:51:18,008 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:51:18,009 - INFO - Starts processing respiratory rate
+2025-04-14 15:51:18,009 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:51:18,010 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:51:18,015 - INFO - Sucessfully scaled the data.
+2025-04-14 15:51:18,016 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:51:18,016 - INFO - Health Classification Model Triggered at 2025-04-14 15:51:18.016885
+2025-04-14 15:51:18,018 - INFO - Prediction: 0
+2025-04-14 15:51:18,018 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:51:18,023 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:51:18.023667
+2025-04-14 15:51:18,024 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:51:18,024 - INFO - Prediction: 1
+2025-04-14 15:51:18,025 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:51:23,032 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:51:23,034 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:51:23,034 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:51:23,034 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:51:23,034 - INFO - Starts processing respiratory rate
+2025-04-14 15:51:23,034 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:51:23,036 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:51:23,041 - INFO - Sucessfully scaled the data.
+2025-04-14 15:51:23,041 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:51:23,041 - INFO - Health Classification Model Triggered at 2025-04-14 15:51:23.041206
+2025-04-14 15:51:23,042 - INFO - Prediction: 1
+2025-04-14 15:51:23,042 - INFO - Patient for the device_id :- esp32_001 is Not Healthy Please Checkup!
+2025-04-14 15:51:23,047 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:51:23.047203
+2025-04-14 15:51:23,048 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:51:23,048 - INFO - Prediction: 1
+2025-04-14 15:51:23,048 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:51:28,056 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:51:28,057 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:51:28,057 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:51:28,057 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:51:28,058 - INFO - Starts processing respiratory rate
+2025-04-14 15:51:28,058 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:51:28,060 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:51:28,065 - INFO - Sucessfully scaled the data.
+2025-04-14 15:51:28,065 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:51:28,066 - INFO - Health Classification Model Triggered at 2025-04-14 15:51:28.066795
+2025-04-14 15:51:28,067 - INFO - Prediction: 0
+2025-04-14 15:51:28,067 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:51:28,073 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:51:28.072019
+2025-04-14 15:51:28,074 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:51:28,074 - INFO - Prediction: 1
+2025-04-14 15:51:28,074 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:51:33,081 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:51:33,085 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:51:33,086 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:51:33,087 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:51:33,087 - INFO - Starts processing respiratory rate
+2025-04-14 15:51:33,088 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:51:33,089 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:51:33,096 - INFO - Sucessfully scaled the data.
+2025-04-14 15:51:33,096 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:51:33,096 - INFO - Health Classification Model Triggered at 2025-04-14 15:51:33.096171
+2025-04-14 15:51:33,098 - INFO - Prediction: 0
+2025-04-14 15:51:33,098 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:51:33,102 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:51:33.102682
+2025-04-14 15:51:33,104 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:51:33,104 - INFO - Prediction: 1
+2025-04-14 15:51:33,105 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:51:38,112 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:51:38,113 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:51:38,114 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:51:38,114 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:51:38,114 - INFO - Starts processing respiratory rate
+2025-04-14 15:51:38,114 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:51:38,115 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:51:38,120 - INFO - Sucessfully scaled the data.
+2025-04-14 15:51:38,120 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:51:38,121 - INFO - Health Classification Model Triggered at 2025-04-14 15:51:38.121251
+2025-04-14 15:51:38,122 - INFO - Prediction: 0
+2025-04-14 15:51:38,122 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:51:38,127 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:51:38.127776
+2025-04-14 15:51:38,130 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:51:38,130 - INFO - Prediction: 1
+2025-04-14 15:51:38,130 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:51:43,137 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:51:43,138 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:51:43,138 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:51:43,139 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:51:43,139 - INFO - Starts processing respiratory rate
+2025-04-14 15:51:43,139 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:51:43,141 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:51:43,145 - INFO - Sucessfully scaled the data.
+2025-04-14 15:51:43,145 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:51:43,146 - INFO - Health Classification Model Triggered at 2025-04-14 15:51:43.146514
+2025-04-14 15:51:43,147 - INFO - Prediction: 0
+2025-04-14 15:51:43,148 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:51:43,153 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:51:43.153835
+2025-04-14 15:51:43,156 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:51:43,156 - INFO - Prediction: 1
+2025-04-14 15:51:43,156 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:51:48,164 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:51:48,165 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:51:48,166 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:51:48,166 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:51:48,167 - INFO - Starts processing respiratory rate
+2025-04-14 15:51:48,167 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:51:48,168 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:51:48,173 - INFO - Sucessfully scaled the data.
+2025-04-14 15:51:48,173 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:51:48,173 - INFO - Health Classification Model Triggered at 2025-04-14 15:51:48.173944
+2025-04-14 15:51:48,174 - INFO - Prediction: 0
+2025-04-14 15:51:48,175 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:51:48,180 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:51:48.180472
+2025-04-14 15:51:48,182 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:51:48,182 - INFO - Prediction: 1
+2025-04-14 15:51:48,182 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:51:53,189 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:51:53,191 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:51:53,193 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:51:53,193 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:51:53,194 - INFO - Starts processing respiratory rate
+2025-04-14 15:51:53,194 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:51:53,195 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:51:53,201 - INFO - Sucessfully scaled the data.
+2025-04-14 15:51:53,201 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:51:53,201 - INFO - Health Classification Model Triggered at 2025-04-14 15:51:53.201730
+2025-04-14 15:51:53,203 - INFO - Prediction: 1
+2025-04-14 15:51:53,203 - INFO - Patient for the device_id :- esp32_001 is Not Healthy Please Checkup!
+2025-04-14 15:51:53,208 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:51:53.208739
+2025-04-14 15:51:53,210 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:51:53,210 - INFO - Prediction: 1
+2025-04-14 15:51:53,211 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:51:58,219 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:51:58,220 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:51:58,220 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:51:58,220 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:51:58,221 - INFO - Starts processing respiratory rate
+2025-04-14 15:51:58,221 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:51:58,223 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:51:58,227 - INFO - Sucessfully scaled the data.
+2025-04-14 15:51:58,228 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:51:58,228 - INFO - Health Classification Model Triggered at 2025-04-14 15:51:58.228720
+2025-04-14 15:51:58,230 - INFO - Prediction: 0
+2025-04-14 15:51:58,230 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:51:58,235 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:51:58.235262
+2025-04-14 15:51:58,236 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:51:58,237 - INFO - Prediction: 1
+2025-04-14 15:51:58,237 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:52:03,244 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:52:03,245 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:52:03,245 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:52:03,246 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:52:03,246 - INFO - Starts processing respiratory rate
+2025-04-14 15:52:03,247 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:52:03,248 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:52:03,252 - INFO - Sucessfully scaled the data.
+2025-04-14 15:52:03,252 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:52:03,252 - INFO - Health Classification Model Triggered at 2025-04-14 15:52:03.252570
+2025-04-14 15:52:03,253 - INFO - Prediction: 1
+2025-04-14 15:52:03,254 - INFO - Patient for the device_id :- esp32_001 is Not Healthy Please Checkup!
+2025-04-14 15:52:03,259 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:52:03.259555
+2025-04-14 15:52:03,260 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:52:03,260 - INFO - Prediction: 1
+2025-04-14 15:52:03,260 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:52:08,267 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:52:08,269 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:52:08,269 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:52:08,269 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:52:08,270 - INFO - Starts processing respiratory rate
+2025-04-14 15:52:08,270 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:52:08,271 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:52:08,276 - INFO - Sucessfully scaled the data.
+2025-04-14 15:52:08,277 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:52:08,277 - INFO - Health Classification Model Triggered at 2025-04-14 15:52:08.277334
+2025-04-14 15:52:08,278 - INFO - Prediction: 0
+2025-04-14 15:52:08,278 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:52:08,283 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:52:08.283894
+2025-04-14 15:52:08,285 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:52:08,286 - INFO - Prediction: 1
+2025-04-14 15:52:08,286 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:52:13,294 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:52:13,295 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:52:13,296 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:52:13,296 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:52:13,296 - INFO - Starts processing respiratory rate
+2025-04-14 15:52:13,297 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:52:13,298 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:52:13,303 - INFO - Sucessfully scaled the data.
+2025-04-14 15:52:13,303 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:52:13,303 - INFO - Health Classification Model Triggered at 2025-04-14 15:52:13.303056
+2025-04-14 15:52:13,304 - INFO - Prediction: 0
+2025-04-14 15:52:13,305 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:52:13,309 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:52:13.309574
+2025-04-14 15:52:13,311 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:52:13,314 - INFO - Prediction: 1
+2025-04-14 15:52:13,315 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:52:18,326 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:52:18,327 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:52:18,327 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:52:18,327 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:52:18,327 - INFO - Starts processing respiratory rate
+2025-04-14 15:52:18,328 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:52:18,328 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:52:18,332 - INFO - Sucessfully scaled the data.
+2025-04-14 15:52:18,333 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:52:18,333 - INFO - Health Classification Model Triggered at 2025-04-14 15:52:18.333831
+2025-04-14 15:52:18,334 - INFO - Prediction: 0
+2025-04-14 15:52:18,334 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:52:18,339 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:52:18.339847
+2025-04-14 15:52:18,342 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:52:18,342 - INFO - Prediction: 1
+2025-04-14 15:52:18,342 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:52:23,349 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:52:23,349 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:52:23,349 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:52:23,350 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:52:23,350 - INFO - Starts processing respiratory rate
+2025-04-14 15:52:23,350 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:52:23,351 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:52:23,356 - INFO - Sucessfully scaled the data.
+2025-04-14 15:52:23,356 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:52:23,356 - INFO - Health Classification Model Triggered at 2025-04-14 15:52:23.356984
+2025-04-14 15:52:23,357 - INFO - Prediction: 0
+2025-04-14 15:52:23,357 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:52:23,362 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:52:23.362867
+2025-04-14 15:52:23,363 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:52:23,364 - INFO - Prediction: 1
+2025-04-14 15:52:23,364 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:52:28,372 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:52:28,373 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:52:28,374 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:52:28,374 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:52:28,375 - INFO - Starts processing respiratory rate
+2025-04-14 15:52:28,375 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:52:28,377 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:52:28,382 - INFO - Sucessfully scaled the data.
+2025-04-14 15:52:28,382 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:52:28,383 - INFO - Health Classification Model Triggered at 2025-04-14 15:52:28.383042
+2025-04-14 15:52:28,385 - INFO - Prediction: 0
+2025-04-14 15:52:28,385 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:52:28,390 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:52:28.390554
+2025-04-14 15:52:28,392 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:52:28,392 - INFO - Prediction: 1
+2025-04-14 15:52:28,393 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:52:33,401 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:52:33,403 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:52:33,403 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:52:33,404 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:52:33,404 - INFO - Starts processing respiratory rate
+2025-04-14 15:52:33,405 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:52:33,406 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:52:33,410 - INFO - Sucessfully scaled the data.
+2025-04-14 15:52:33,411 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:52:33,411 - INFO - Health Classification Model Triggered at 2025-04-14 15:52:33.411569
+2025-04-14 15:52:33,412 - INFO - Prediction: 0
+2025-04-14 15:52:33,412 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:52:33,418 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:52:33.418569
+2025-04-14 15:52:33,420 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:52:33,420 - INFO - Prediction: 1
+2025-04-14 15:52:33,420 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:52:38,427 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:52:38,429 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:52:38,429 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:52:38,429 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:52:38,430 - INFO - Starts processing respiratory rate
+2025-04-14 15:52:38,430 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:52:38,434 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:52:38,443 - INFO - Sucessfully scaled the data.
+2025-04-14 15:52:38,443 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:52:38,444 - INFO - Health Classification Model Triggered at 2025-04-14 15:52:38.444411
+2025-04-14 15:52:38,447 - INFO - Prediction: 1
+2025-04-14 15:52:38,447 - INFO - Patient for the device_id :- esp32_001 is Not Healthy Please Checkup!
+2025-04-14 15:52:38,453 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:52:38.453932
+2025-04-14 15:52:38,454 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:52:38,455 - INFO - Prediction: 1
+2025-04-14 15:52:38,455 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:52:43,467 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:52:43,469 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:52:43,469 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:52:43,469 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:52:43,469 - INFO - Starts processing respiratory rate
+2025-04-14 15:52:43,470 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:52:43,471 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:52:43,475 - INFO - Sucessfully scaled the data.
+2025-04-14 15:52:43,476 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:52:43,476 - INFO - Health Classification Model Triggered at 2025-04-14 15:52:43.476951
+2025-04-14 15:52:43,477 - INFO - Prediction: 1
+2025-04-14 15:52:43,478 - INFO - Patient for the device_id :- esp32_001 is Not Healthy Please Checkup!
+2025-04-14 15:52:43,484 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:52:43.484193
+2025-04-14 15:52:43,485 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:52:43,486 - INFO - Prediction: 1
+2025-04-14 15:52:43,486 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:52:48,498 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:52:48,500 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:52:48,500 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:52:48,501 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:52:48,501 - INFO - Starts processing respiratory rate
+2025-04-14 15:52:48,502 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:52:48,504 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:52:48,509 - INFO - Sucessfully scaled the data.
+2025-04-14 15:52:48,509 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:52:48,509 - INFO - Health Classification Model Triggered at 2025-04-14 15:52:48.509686
+2025-04-14 15:52:48,511 - INFO - Prediction: 0
+2025-04-14 15:52:48,511 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:52:48,517 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:52:48.517857
+2025-04-14 15:52:48,518 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:52:48,518 - INFO - Prediction: 1
+2025-04-14 15:52:48,518 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:52:53,526 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:52:53,527 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:52:53,527 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:52:53,528 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:52:53,528 - INFO - Starts processing respiratory rate
+2025-04-14 15:52:53,529 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:52:53,530 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:52:53,536 - INFO - Sucessfully scaled the data.
+2025-04-14 15:52:53,536 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:52:53,536 - INFO - Health Classification Model Triggered at 2025-04-14 15:52:53.536813
+2025-04-14 15:52:53,538 - INFO - Prediction: 0
+2025-04-14 15:52:53,538 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:52:53,543 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:52:53.543339
+2025-04-14 15:52:53,544 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:52:53,544 - INFO - Prediction: 1
+2025-04-14 15:52:53,545 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:52:58,553 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:52:58,553 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:52:58,554 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:52:58,554 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:52:58,555 - INFO - Starts processing respiratory rate
+2025-04-14 15:52:58,555 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:52:58,556 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:52:58,561 - INFO - Sucessfully scaled the data.
+2025-04-14 15:52:58,561 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:52:58,562 - INFO - Health Classification Model Triggered at 2025-04-14 15:52:58.562125
+2025-04-14 15:52:58,563 - INFO - Prediction: 0
+2025-04-14 15:52:58,563 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:52:58,568 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:52:58.568125
+2025-04-14 15:52:58,570 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:52:58,570 - INFO - Prediction: 1
+2025-04-14 15:52:58,570 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:53:03,577 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:53:03,580 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:53:03,580 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:53:03,581 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:53:03,582 - INFO - Starts processing respiratory rate
+2025-04-14 15:53:03,582 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:53:03,584 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:53:03,590 - INFO - Sucessfully scaled the data.
+2025-04-14 15:53:03,590 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:53:03,591 - INFO - Health Classification Model Triggered at 2025-04-14 15:53:03.591066
+2025-04-14 15:53:03,592 - INFO - Prediction: 1
+2025-04-14 15:53:03,593 - INFO - Patient for the device_id :- esp32_001 is Not Healthy Please Checkup!
+2025-04-14 15:53:03,597 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:53:03.597333
+2025-04-14 15:53:03,598 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:53:03,598 - INFO - Prediction: 1
+2025-04-14 15:53:03,598 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:53:08,606 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:53:08,608 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:53:08,609 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:53:08,609 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:53:08,610 - INFO - Starts processing respiratory rate
+2025-04-14 15:53:08,610 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:53:08,612 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:53:08,617 - INFO - Sucessfully scaled the data.
+2025-04-14 15:53:08,617 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:53:08,617 - INFO - Health Classification Model Triggered at 2025-04-14 15:53:08.617761
+2025-04-14 15:53:08,618 - INFO - Prediction: 0
+2025-04-14 15:53:08,618 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:53:08,624 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:53:08.624173
+2025-04-14 15:53:08,626 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:53:08,626 - INFO - Prediction: 1
+2025-04-14 15:53:08,626 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:53:13,634 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:53:13,635 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:53:13,636 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:53:13,636 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:53:13,636 - INFO - Starts processing respiratory rate
+2025-04-14 15:53:13,637 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:53:13,638 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:53:13,644 - INFO - Sucessfully scaled the data.
+2025-04-14 15:53:13,644 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:53:13,644 - INFO - Health Classification Model Triggered at 2025-04-14 15:53:13.644275
+2025-04-14 15:53:13,646 - INFO - Prediction: 0
+2025-04-14 15:53:13,646 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:53:13,650 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:53:13.650790
+2025-04-14 15:53:13,652 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:53:13,652 - INFO - Prediction: 1
+2025-04-14 15:53:13,652 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:53:18,659 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:53:18,660 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:53:18,661 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:53:18,662 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:53:18,663 - INFO - Starts processing respiratory rate
+2025-04-14 15:53:18,663 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:53:18,665 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:53:18,668 - INFO - Sucessfully scaled the data.
+2025-04-14 15:53:18,668 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:53:18,669 - INFO - Health Classification Model Triggered at 2025-04-14 15:53:18.669982
+2025-04-14 15:53:18,670 - INFO - Prediction: 1
+2025-04-14 15:53:18,670 - INFO - Patient for the device_id :- esp32_001 is Not Healthy Please Checkup!
+2025-04-14 15:53:18,675 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:53:18.675510
+2025-04-14 15:53:18,677 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:53:18,677 - INFO - Prediction: 1
+2025-04-14 15:53:18,678 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:53:23,685 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:53:23,686 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:53:23,686 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:53:23,686 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:53:23,687 - INFO - Starts processing respiratory rate
+2025-04-14 15:53:23,688 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:53:23,689 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:53:23,693 - INFO - Sucessfully scaled the data.
+2025-04-14 15:53:23,693 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:53:23,693 - INFO - Health Classification Model Triggered at 2025-04-14 15:53:23.693257
+2025-04-14 15:53:23,694 - INFO - Prediction: 0
+2025-04-14 15:53:23,694 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:53:23,699 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:53:23.699914
+2025-04-14 15:53:23,701 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:53:23,701 - INFO - Prediction: 1
+2025-04-14 15:53:23,701 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:53:28,708 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:53:28,711 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:53:28,711 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:53:28,711 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:53:28,712 - INFO - Starts processing respiratory rate
+2025-04-14 15:53:28,712 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:53:28,713 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:53:28,718 - INFO - Sucessfully scaled the data.
+2025-04-14 15:53:28,718 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:53:28,718 - INFO - Health Classification Model Triggered at 2025-04-14 15:53:28.718484
+2025-04-14 15:53:28,719 - INFO - Prediction: 0
+2025-04-14 15:53:28,719 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:53:28,725 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:53:28.725135
+2025-04-14 15:53:28,726 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:53:28,727 - INFO - Prediction: 1
+2025-04-14 15:53:28,727 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:53:33,733 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:53:33,734 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:53:33,735 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:53:33,735 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:53:33,736 - INFO - Starts processing respiratory rate
+2025-04-14 15:53:33,736 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:53:33,737 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:53:33,742 - INFO - Sucessfully scaled the data.
+2025-04-14 15:53:33,742 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:53:33,742 - INFO - Health Classification Model Triggered at 2025-04-14 15:53:33.742719
+2025-04-14 15:53:33,743 - INFO - Prediction: 0
+2025-04-14 15:53:33,743 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:53:33,748 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:53:33.748721
+2025-04-14 15:53:33,750 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:53:33,751 - INFO - Prediction: 1
+2025-04-14 15:53:33,751 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:53:38,758 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:53:38,760 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:53:38,761 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:53:38,761 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:53:38,761 - INFO - Starts processing respiratory rate
+2025-04-14 15:53:38,762 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:53:38,762 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:53:38,768 - INFO - Sucessfully scaled the data.
+2025-04-14 15:53:38,768 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:53:38,768 - INFO - Health Classification Model Triggered at 2025-04-14 15:53:38.768484
+2025-04-14 15:53:38,770 - INFO - Prediction: 1
+2025-04-14 15:53:38,770 - INFO - Patient for the device_id :- esp32_001 is Not Healthy Please Checkup!
+2025-04-14 15:53:38,775 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:53:38.775112
+2025-04-14 15:53:38,777 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:53:38,777 - INFO - Prediction: 1
+2025-04-14 15:53:38,777 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:53:43,784 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:53:43,784 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:53:43,785 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:53:43,785 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:53:43,785 - INFO - Starts processing respiratory rate
+2025-04-14 15:53:43,785 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:53:43,787 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:53:43,792 - INFO - Sucessfully scaled the data.
+2025-04-14 15:53:43,792 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:53:43,792 - INFO - Health Classification Model Triggered at 2025-04-14 15:53:43.792205
+2025-04-14 15:53:43,794 - INFO - Prediction: 0
+2025-04-14 15:53:43,794 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:53:43,799 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:53:43.799058
+2025-04-14 15:53:43,801 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:53:43,801 - INFO - Prediction: 1
+2025-04-14 15:53:43,801 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:53:48,808 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:53:48,810 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:53:48,811 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:53:48,812 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:53:48,812 - INFO - Starts processing respiratory rate
+2025-04-14 15:53:48,813 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:53:48,814 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:53:48,819 - INFO - Sucessfully scaled the data.
+2025-04-14 15:53:48,819 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:53:48,819 - INFO - Health Classification Model Triggered at 2025-04-14 15:53:48.819778
+2025-04-14 15:53:48,822 - INFO - Prediction: 0
+2025-04-14 15:53:48,822 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:53:48,826 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:53:48.826549
+2025-04-14 15:53:48,828 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:53:48,828 - INFO - Prediction: 1
+2025-04-14 15:53:48,828 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:53:53,836 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:53:53,837 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:53:53,837 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:53:53,837 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:53:53,838 - INFO - Starts processing respiratory rate
+2025-04-14 15:53:53,838 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:53:53,839 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:53:53,843 - INFO - Sucessfully scaled the data.
+2025-04-14 15:53:53,844 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:53:53,844 - INFO - Health Classification Model Triggered at 2025-04-14 15:53:53.844839
+2025-04-14 15:53:53,845 - INFO - Prediction: 0
+2025-04-14 15:53:53,846 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:53:53,851 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:53:53.851421
+2025-04-14 15:53:53,852 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:53:53,852 - INFO - Prediction: 1
+2025-04-14 15:53:53,852 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:53:58,860 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:53:58,862 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:53:58,862 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:53:58,862 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:53:58,863 - INFO - Starts processing respiratory rate
+2025-04-14 15:53:58,863 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:53:58,864 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:53:58,869 - INFO - Sucessfully scaled the data.
+2025-04-14 15:53:58,870 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:53:58,870 - INFO - Health Classification Model Triggered at 2025-04-14 15:53:58.870876
+2025-04-14 15:53:58,871 - INFO - Prediction: 0
+2025-04-14 15:53:58,872 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:53:58,877 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:53:58.876876
+2025-04-14 15:53:58,878 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:53:58,878 - INFO - Prediction: 1
+2025-04-14 15:53:58,878 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:54:03,886 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:54:03,888 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:54:03,889 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:54:03,889 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:54:03,889 - INFO - Starts processing respiratory rate
+2025-04-14 15:54:03,889 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:54:03,892 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:54:03,897 - INFO - Sucessfully scaled the data.
+2025-04-14 15:54:03,897 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:54:03,897 - INFO - Health Classification Model Triggered at 2025-04-14 15:54:03.897020
+2025-04-14 15:54:03,899 - INFO - Prediction: 0
+2025-04-14 15:54:03,899 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:54:03,903 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:54:03.903539
+2025-04-14 15:54:03,904 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:54:03,904 - INFO - Prediction: 1
+2025-04-14 15:54:03,905 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:54:08,913 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:54:08,914 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:54:08,915 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:54:08,915 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:54:08,916 - INFO - Starts processing respiratory rate
+2025-04-14 15:54:08,916 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:54:08,917 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:54:08,921 - INFO - Sucessfully scaled the data.
+2025-04-14 15:54:08,921 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:54:08,922 - INFO - Health Classification Model Triggered at 2025-04-14 15:54:08.922593
+2025-04-14 15:54:08,923 - INFO - Prediction: 0
+2025-04-14 15:54:08,923 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:54:08,928 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:54:08.927586
+2025-04-14 15:54:08,929 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:54:08,930 - INFO - Prediction: 1
+2025-04-14 15:54:08,930 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:54:13,937 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:54:13,940 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:54:13,940 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:54:13,941 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:54:13,941 - INFO - Starts processing respiratory rate
+2025-04-14 15:54:13,941 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:54:13,943 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:54:13,948 - INFO - Sucessfully scaled the data.
+2025-04-14 15:54:13,948 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:54:13,949 - INFO - Health Classification Model Triggered at 2025-04-14 15:54:13.948150
+2025-04-14 15:54:13,951 - INFO - Prediction: 1
+2025-04-14 15:54:13,951 - INFO - Patient for the device_id :- esp32_001 is Not Healthy Please Checkup!
+2025-04-14 15:54:13,956 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:54:13.956663
+2025-04-14 15:54:13,957 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:54:13,957 - INFO - Prediction: 1
+2025-04-14 15:54:13,957 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:54:18,964 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:54:18,966 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:54:18,966 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:54:18,966 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:54:18,966 - INFO - Starts processing respiratory rate
+2025-04-14 15:54:18,967 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:54:18,968 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:54:18,971 - INFO - Sucessfully scaled the data.
+2025-04-14 15:54:18,972 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:54:18,972 - INFO - Health Classification Model Triggered at 2025-04-14 15:54:18.972799
+2025-04-14 15:54:18,973 - INFO - Prediction: 0
+2025-04-14 15:54:18,974 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:54:18,978 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:54:18.978808
+2025-04-14 15:54:18,980 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:54:18,980 - INFO - Prediction: 1
+2025-04-14 15:54:18,980 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:54:23,988 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:54:23,989 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:54:23,990 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:54:23,990 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:54:23,990 - INFO - Starts processing respiratory rate
+2025-04-14 15:54:23,990 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:54:23,991 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:54:23,997 - INFO - Sucessfully scaled the data.
+2025-04-14 15:54:23,997 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:54:23,997 - INFO - Health Classification Model Triggered at 2025-04-14 15:54:23.997149
+2025-04-14 15:54:23,998 - INFO - Prediction: 0
+2025-04-14 15:54:23,998 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:54:24,003 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:54:24.003667
+2025-04-14 15:54:24,004 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:54:24,005 - INFO - Prediction: 1
+2025-04-14 15:54:24,005 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:54:29,012 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:54:29,015 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:54:29,016 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:54:29,016 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:54:29,018 - INFO - Starts processing respiratory rate
+2025-04-14 15:54:29,018 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:54:29,021 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:54:29,025 - INFO - Sucessfully scaled the data.
+2025-04-14 15:54:29,026 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:54:29,026 - INFO - Health Classification Model Triggered at 2025-04-14 15:54:29.026755
+2025-04-14 15:54:29,027 - INFO - Prediction: 0
+2025-04-14 15:54:29,028 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:54:29,033 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:54:29.033293
+2025-04-14 15:54:29,035 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:54:29,035 - INFO - Prediction: 1
+2025-04-14 15:54:29,035 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:54:34,043 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:54:34,046 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:54:34,047 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:54:34,048 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:54:34,049 - INFO - Starts processing respiratory rate
+2025-04-14 15:54:34,049 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:54:34,051 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:54:34,056 - INFO - Sucessfully scaled the data.
+2025-04-14 15:54:34,057 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:54:34,057 - INFO - Health Classification Model Triggered at 2025-04-14 15:54:34.057140
+2025-04-14 15:54:34,058 - INFO - Prediction: 1
+2025-04-14 15:54:34,058 - INFO - Patient for the device_id :- esp32_001 is Not Healthy Please Checkup!
+2025-04-14 15:54:34,063 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:54:34.062682
+2025-04-14 15:54:34,064 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:54:34,064 - INFO - Prediction: 1
+2025-04-14 15:54:34,064 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:54:39,071 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:54:39,072 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:54:39,073 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:54:39,073 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:54:39,073 - INFO - Starts processing respiratory rate
+2025-04-14 15:54:39,073 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:54:39,075 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:54:39,080 - INFO - Sucessfully scaled the data.
+2025-04-14 15:54:39,080 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:54:39,080 - INFO - Health Classification Model Triggered at 2025-04-14 15:54:39.080419
+2025-04-14 15:54:39,081 - INFO - Prediction: 0
+2025-04-14 15:54:39,082 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:54:39,086 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:54:39.086423
+2025-04-14 15:54:39,088 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:54:39,088 - INFO - Prediction: 1
+2025-04-14 15:54:39,088 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:54:44,096 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:54:44,097 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:54:44,097 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:54:44,097 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:54:44,098 - INFO - Starts processing respiratory rate
+2025-04-14 15:54:44,098 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:54:44,101 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:54:44,106 - INFO - Sucessfully scaled the data.
+2025-04-14 15:54:44,106 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:54:44,107 - INFO - Health Classification Model Triggered at 2025-04-14 15:54:44.107346
+2025-04-14 15:54:44,108 - INFO - Prediction: 1
+2025-04-14 15:54:44,108 - INFO - Patient for the device_id :- esp32_001 is Not Healthy Please Checkup!
+2025-04-14 15:54:44,113 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:54:44.113399
+2025-04-14 15:54:44,114 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:54:44,115 - INFO - Prediction: 1
+2025-04-14 15:54:44,115 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:54:49,122 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:54:49,125 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:54:49,125 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:54:49,126 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:54:49,126 - INFO - Starts processing respiratory rate
+2025-04-14 15:54:49,126 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:54:49,128 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:54:49,134 - INFO - Sucessfully scaled the data.
+2025-04-14 15:54:49,134 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:54:49,134 - INFO - Health Classification Model Triggered at 2025-04-14 15:54:49.134053
+2025-04-14 15:54:49,135 - INFO - Prediction: 0
+2025-04-14 15:54:49,136 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:54:49,140 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:54:49.140564
+2025-04-14 15:54:49,141 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:54:49,141 - INFO - Prediction: 1
+2025-04-14 15:54:49,141 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:54:54,149 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:54:54,150 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:54:54,150 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:54:54,151 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:54:54,151 - INFO - Starts processing respiratory rate
+2025-04-14 15:54:54,152 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:54:54,153 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:54:54,157 - INFO - Sucessfully scaled the data.
+2025-04-14 15:54:54,158 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:54:54,158 - INFO - Health Classification Model Triggered at 2025-04-14 15:54:54.158279
+2025-04-14 15:54:54,158 - INFO - Prediction: 0
+2025-04-14 15:54:54,159 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:54:54,163 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:54:54.163495
+2025-04-14 15:54:54,164 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:54:54,165 - INFO - Prediction: 1
+2025-04-14 15:54:54,165 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:54:59,172 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:54:59,174 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:54:59,174 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:54:59,175 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:54:59,175 - INFO - Starts processing respiratory rate
+2025-04-14 15:54:59,175 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:54:59,177 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:54:59,182 - INFO - Sucessfully scaled the data.
+2025-04-14 15:54:59,182 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:54:59,183 - INFO - Health Classification Model Triggered at 2025-04-14 15:54:59.183390
+2025-04-14 15:54:59,184 - INFO - Prediction: 1
+2025-04-14 15:54:59,184 - INFO - Patient for the device_id :- esp32_001 is Not Healthy Please Checkup!
+2025-04-14 15:54:59,188 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:54:59.188390
+2025-04-14 15:54:59,190 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:54:59,191 - INFO - Prediction: 1
+2025-04-14 15:54:59,191 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:55:04,199 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:55:04,200 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:55:04,200 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:55:04,200 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:55:04,201 - INFO - Starts processing respiratory rate
+2025-04-14 15:55:04,201 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:55:04,203 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:55:04,207 - INFO - Sucessfully scaled the data.
+2025-04-14 15:55:04,207 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:55:04,208 - INFO - Health Classification Model Triggered at 2025-04-14 15:55:04.208565
+2025-04-14 15:55:04,209 - INFO - Prediction: 0
+2025-04-14 15:55:04,210 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:55:04,215 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:55:04.215096
+2025-04-14 15:55:04,216 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:55:04,217 - INFO - Prediction: 1
+2025-04-14 15:55:04,217 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:55:09,224 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:55:09,225 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:55:09,225 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:55:09,226 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:55:09,226 - INFO - Starts processing respiratory rate
+2025-04-14 15:55:09,226 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:55:09,228 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:55:09,233 - INFO - Sucessfully scaled the data.
+2025-04-14 15:55:09,233 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:55:09,233 - INFO - Health Classification Model Triggered at 2025-04-14 15:55:09.233168
+2025-04-14 15:55:09,234 - INFO - Prediction: 0
+2025-04-14 15:55:09,235 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:55:09,239 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:55:09.238162
+2025-04-14 15:55:09,241 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:55:09,241 - INFO - Prediction: 1
+2025-04-14 15:55:09,241 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:55:14,249 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:55:14,250 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:55:14,250 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:55:14,250 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:55:14,251 - INFO - Starts processing respiratory rate
+2025-04-14 15:55:14,251 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:55:14,253 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:55:14,257 - INFO - Sucessfully scaled the data.
+2025-04-14 15:55:14,257 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:55:14,257 - INFO - Health Classification Model Triggered at 2025-04-14 15:55:14.257802
+2025-04-14 15:55:14,258 - INFO - Prediction: 0
+2025-04-14 15:55:14,259 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:55:14,263 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:55:14.263821
+2025-04-14 15:55:14,264 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:55:14,265 - INFO - Prediction: 1
+2025-04-14 15:55:14,265 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:55:19,273 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:55:19,276 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:55:19,276 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:55:19,277 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:55:19,278 - INFO - Starts processing respiratory rate
+2025-04-14 15:55:19,278 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:55:19,281 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:55:19,285 - INFO - Sucessfully scaled the data.
+2025-04-14 15:55:19,285 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:55:19,285 - INFO - Health Classification Model Triggered at 2025-04-14 15:55:19.285936
+2025-04-14 15:55:19,287 - INFO - Prediction: 0
+2025-04-14 15:55:19,287 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:55:19,291 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:55:19.291955
+2025-04-14 15:55:19,292 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:55:19,292 - INFO - Prediction: 1
+2025-04-14 15:55:19,294 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:55:24,300 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:55:24,302 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:55:24,302 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:55:24,302 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:55:24,303 - INFO - Starts processing respiratory rate
+2025-04-14 15:55:24,303 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:55:24,304 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:55:24,308 - INFO - Sucessfully scaled the data.
+2025-04-14 15:55:24,309 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:55:24,309 - INFO - Health Classification Model Triggered at 2025-04-14 15:55:24.309786
+2025-04-14 15:55:24,310 - INFO - Prediction: 0
+2025-04-14 15:55:24,311 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:55:24,317 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:55:24.317794
+2025-04-14 15:55:24,318 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:55:24,318 - INFO - Prediction: 1
+2025-04-14 15:55:24,319 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:55:29,329 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:55:29,330 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:55:29,331 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:55:29,332 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:55:29,332 - INFO - Starts processing respiratory rate
+2025-04-14 15:55:29,332 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:55:29,334 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:55:29,337 - INFO - Sucessfully scaled the data.
+2025-04-14 15:55:29,338 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:55:29,338 - INFO - Health Classification Model Triggered at 2025-04-14 15:55:29.338232
+2025-04-14 15:55:29,338 - INFO - Prediction: 0
+2025-04-14 15:55:29,338 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:55:29,341 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:55:29.341750
+2025-04-14 15:55:29,344 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:55:29,344 - INFO - Prediction: 1
+2025-04-14 15:55:29,344 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:55:34,351 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:55:34,352 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:55:34,352 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:55:34,352 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:55:34,353 - INFO - Starts processing respiratory rate
+2025-04-14 15:55:34,353 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:55:34,354 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:55:34,358 - INFO - Sucessfully scaled the data.
+2025-04-14 15:55:34,358 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:55:34,359 - INFO - Health Classification Model Triggered at 2025-04-14 15:55:34.359579
+2025-04-14 15:55:34,360 - INFO - Prediction: 0
+2025-04-14 15:55:34,360 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:55:34,366 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:55:34.366205
+2025-04-14 15:55:34,367 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:55:34,368 - INFO - Prediction: 1
+2025-04-14 15:55:34,368 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:55:39,374 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:55:39,375 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:55:39,375 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:55:39,376 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:55:39,376 - INFO - Starts processing respiratory rate
+2025-04-14 15:55:39,376 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:55:39,378 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:55:39,383 - INFO - Sucessfully scaled the data.
+2025-04-14 15:55:39,383 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:55:39,383 - INFO - Health Classification Model Triggered at 2025-04-14 15:55:39.383112
+2025-04-14 15:55:39,384 - INFO - Prediction: 1
+2025-04-14 15:55:39,385 - INFO - Patient for the device_id :- esp32_001 is Not Healthy Please Checkup!
+2025-04-14 15:55:39,388 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:55:39.388112
+2025-04-14 15:55:39,390 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:55:39,391 - INFO - Prediction: 1
+2025-04-14 15:55:39,391 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:55:44,398 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:55:44,399 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:55:44,400 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:55:44,400 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:55:44,401 - INFO - Starts processing respiratory rate
+2025-04-14 15:55:44,401 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:55:44,404 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:55:44,410 - INFO - Sucessfully scaled the data.
+2025-04-14 15:55:44,410 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:55:44,410 - INFO - Health Classification Model Triggered at 2025-04-14 15:55:44.410791
+2025-04-14 15:55:44,412 - INFO - Prediction: 0
+2025-04-14 15:55:44,413 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:55:44,419 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:55:44.419849
+2025-04-14 15:55:44,421 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:55:44,421 - INFO - Prediction: 1
+2025-04-14 15:55:44,422 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:55:49,429 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:55:49,432 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:55:49,433 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:55:49,433 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:55:49,434 - INFO - Starts processing respiratory rate
+2025-04-14 15:55:49,434 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:55:49,437 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:55:49,443 - INFO - Sucessfully scaled the data.
+2025-04-14 15:55:49,443 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:55:49,444 - INFO - Health Classification Model Triggered at 2025-04-14 15:55:49.444149
+2025-04-14 15:55:49,446 - INFO - Prediction: 0
+2025-04-14 15:55:49,446 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:55:49,451 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:55:49.451653
+2025-04-14 15:55:49,454 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:55:49,455 - INFO - Prediction: 1
+2025-04-14 15:55:49,455 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:55:54,468 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:55:54,469 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:55:54,470 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:55:54,470 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:55:54,471 - INFO - Starts processing respiratory rate
+2025-04-14 15:55:54,471 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:55:54,473 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:55:54,480 - INFO - Sucessfully scaled the data.
+2025-04-14 15:55:54,481 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:55:54,481 - INFO - Health Classification Model Triggered at 2025-04-14 15:55:54.481543
+2025-04-14 15:55:54,484 - INFO - Prediction: 0
+2025-04-14 15:55:54,484 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:55:54,491 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:55:54.491925
+2025-04-14 15:55:54,495 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:55:54,496 - INFO - Prediction: 1
+2025-04-14 15:55:54,496 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:55:59,508 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:55:59,508 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:55:59,509 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:55:59,509 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:55:59,510 - INFO - Starts processing respiratory rate
+2025-04-14 15:55:59,510 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:55:59,511 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:55:59,518 - INFO - Sucessfully scaled the data.
+2025-04-14 15:55:59,518 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:55:59,519 - INFO - Health Classification Model Triggered at 2025-04-14 15:55:59.519914
+2025-04-14 15:55:59,523 - INFO - Prediction: 0
+2025-04-14 15:55:59,524 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:55:59,531 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:55:59.531573
+2025-04-14 15:55:59,533 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:55:59,534 - INFO - Prediction: 1
+2025-04-14 15:55:59,535 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:56:04,547 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:56:04,548 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:56:04,549 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:56:04,549 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:56:04,550 - INFO - Starts processing respiratory rate
+2025-04-14 15:56:04,550 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:56:04,552 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:56:04,557 - INFO - Sucessfully scaled the data.
+2025-04-14 15:56:04,557 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:56:04,557 - INFO - Health Classification Model Triggered at 2025-04-14 15:56:04.557800
+2025-04-14 15:56:04,559 - INFO - Prediction: 0
+2025-04-14 15:56:04,559 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:56:04,568 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:56:04.568346
+2025-04-14 15:56:04,571 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:56:04,571 - INFO - Prediction: 1
+2025-04-14 15:56:04,572 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:56:09,582 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:56:09,583 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:56:09,583 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:56:09,584 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:56:09,584 - INFO - Starts processing respiratory rate
+2025-04-14 15:56:09,584 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:56:09,586 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:56:09,592 - INFO - Sucessfully scaled the data.
+2025-04-14 15:56:09,592 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:56:09,593 - INFO - Health Classification Model Triggered at 2025-04-14 15:56:09.593755
+2025-04-14 15:56:09,594 - INFO - Prediction: 1
+2025-04-14 15:56:09,594 - INFO - Patient for the device_id :- esp32_001 is Not Healthy Please Checkup!
+2025-04-14 15:56:09,599 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:56:09.599758
+2025-04-14 15:56:09,601 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:56:09,601 - INFO - Prediction: 1
+2025-04-14 15:56:09,601 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:56:14,614 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:56:14,616 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:56:14,617 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:56:14,617 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:56:14,618 - INFO - Starts processing respiratory rate
+2025-04-14 15:56:14,618 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:56:14,621 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:56:14,628 - INFO - Sucessfully scaled the data.
+2025-04-14 15:56:14,628 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:56:14,628 - INFO - Health Classification Model Triggered at 2025-04-14 15:56:14.628719
+2025-04-14 15:56:14,631 - INFO - Prediction: 0
+2025-04-14 15:56:14,631 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:56:14,635 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:56:14.635761
+2025-04-14 15:56:14,637 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:56:14,638 - INFO - Prediction: 1
+2025-04-14 15:56:14,638 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:56:19,649 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:56:19,650 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:56:19,650 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:56:19,651 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:56:19,652 - INFO - Starts processing respiratory rate
+2025-04-14 15:56:19,652 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:56:19,654 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:56:19,660 - INFO - Sucessfully scaled the data.
+2025-04-14 15:56:19,661 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:56:19,661 - INFO - Health Classification Model Triggered at 2025-04-14 15:56:19.661208
+2025-04-14 15:56:19,662 - INFO - Prediction: 0
+2025-04-14 15:56:19,662 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:56:19,668 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:56:19.668207
+2025-04-14 15:56:19,670 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:56:19,671 - INFO - Prediction: 1
+2025-04-14 15:56:19,671 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:56:24,682 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:56:24,683 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:56:24,684 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:56:24,684 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:56:24,685 - INFO - Starts processing respiratory rate
+2025-04-14 15:56:24,685 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:56:24,687 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:56:24,694 - INFO - Sucessfully scaled the data.
+2025-04-14 15:56:24,695 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:56:24,696 - INFO - Health Classification Model Triggered at 2025-04-14 15:56:24.695996
+2025-04-14 15:56:24,699 - INFO - Prediction: 1
+2025-04-14 15:56:24,699 - INFO - Patient for the device_id :- esp32_001 is Not Healthy Please Checkup!
+2025-04-14 15:56:24,706 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:56:24.705607
+2025-04-14 15:56:24,708 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:56:24,708 - INFO - Prediction: 1
+2025-04-14 15:56:24,709 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:56:29,717 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:56:29,719 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:56:29,719 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:56:29,719 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:56:29,720 - INFO - Starts processing respiratory rate
+2025-04-14 15:56:29,720 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:56:29,722 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:56:29,728 - INFO - Sucessfully scaled the data.
+2025-04-14 15:56:29,728 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:56:29,728 - INFO - Health Classification Model Triggered at 2025-04-14 15:56:29.728800
+2025-04-14 15:56:29,730 - INFO - Prediction: 0
+2025-04-14 15:56:29,731 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:56:29,736 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:56:29.736486
+2025-04-14 15:56:29,738 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:56:29,738 - INFO - Prediction: 1
+2025-04-14 15:56:29,738 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:56:34,747 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:56:34,748 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:56:34,748 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:56:34,748 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:56:34,748 - INFO - Starts processing respiratory rate
+2025-04-14 15:56:34,749 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:56:34,750 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:56:34,756 - INFO - Sucessfully scaled the data.
+2025-04-14 15:56:34,757 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:56:34,757 - INFO - Health Classification Model Triggered at 2025-04-14 15:56:34.757712
+2025-04-14 15:56:34,759 - INFO - Prediction: 0
+2025-04-14 15:56:34,760 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:56:34,766 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:56:34.766793
+2025-04-14 15:56:34,768 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:56:34,768 - INFO - Prediction: 1
+2025-04-14 15:56:34,768 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:56:39,777 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:56:39,778 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:56:39,778 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:56:39,779 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:56:39,779 - INFO - Starts processing respiratory rate
+2025-04-14 15:56:39,779 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:56:39,781 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:56:39,791 - INFO - Sucessfully scaled the data.
+2025-04-14 15:56:39,791 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:56:39,791 - INFO - Health Classification Model Triggered at 2025-04-14 15:56:39.791708
+2025-04-14 15:56:39,793 - INFO - Prediction: 0
+2025-04-14 15:56:39,794 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:56:39,799 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:56:39.799719
+2025-04-14 15:56:39,801 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:56:39,802 - INFO - Prediction: 1
+2025-04-14 15:56:39,802 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:56:44,813 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:56:44,814 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:56:44,815 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:56:44,815 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:56:44,816 - INFO - Starts processing respiratory rate
+2025-04-14 15:56:44,816 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:56:44,818 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:56:44,823 - INFO - Sucessfully scaled the data.
+2025-04-14 15:56:44,825 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:56:44,825 - INFO - Health Classification Model Triggered at 2025-04-14 15:56:44.825251
+2025-04-14 15:56:44,826 - INFO - Prediction: 0
+2025-04-14 15:56:44,827 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:56:44,830 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:56:44.830798
+2025-04-14 15:56:44,832 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:56:44,832 - INFO - Prediction: 1
+2025-04-14 15:56:44,832 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:56:49,842 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:56:49,843 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:56:49,844 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:56:49,844 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:56:49,845 - INFO - Starts processing respiratory rate
+2025-04-14 15:56:49,845 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:56:49,847 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:56:49,855 - INFO - Sucessfully scaled the data.
+2025-04-14 15:56:49,856 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:56:49,856 - INFO - Health Classification Model Triggered at 2025-04-14 15:56:49.856695
+2025-04-14 15:56:49,860 - INFO - Prediction: 0
+2025-04-14 15:56:49,860 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:56:49,867 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:56:49.867207
+2025-04-14 15:56:49,868 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:56:49,868 - INFO - Prediction: 1
+2025-04-14 15:56:49,869 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:56:54,878 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:56:54,879 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:56:54,879 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:56:54,880 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:56:54,880 - INFO - Starts processing respiratory rate
+2025-04-14 15:56:54,881 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:56:54,883 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:56:54,891 - INFO - Sucessfully scaled the data.
+2025-04-14 15:56:54,891 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:56:54,891 - INFO - Health Classification Model Triggered at 2025-04-14 15:56:54.891156
+2025-04-14 15:56:54,893 - INFO - Prediction: 0
+2025-04-14 15:56:54,893 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:56:54,898 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:56:54.898252
+2025-04-14 15:56:54,899 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:56:54,899 - INFO - Prediction: 1
+2025-04-14 15:56:54,899 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:56:59,909 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:56:59,910 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:56:59,910 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:56:59,911 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:56:59,912 - INFO - Starts processing respiratory rate
+2025-04-14 15:56:59,912 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:56:59,913 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:56:59,918 - INFO - Sucessfully scaled the data.
+2025-04-14 15:56:59,918 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:56:59,918 - INFO - Health Classification Model Triggered at 2025-04-14 15:56:59.918834
+2025-04-14 15:56:59,921 - INFO - Prediction: 0
+2025-04-14 15:56:59,921 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:56:59,925 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:56:59.925720
+2025-04-14 15:56:59,926 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:56:59,927 - INFO - Prediction: 1
+2025-04-14 15:56:59,927 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:57:04,933 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:57:04,935 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:57:04,935 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:57:04,935 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:57:04,936 - INFO - Starts processing respiratory rate
+2025-04-14 15:57:04,936 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:57:04,937 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:57:04,941 - INFO - Sucessfully scaled the data.
+2025-04-14 15:57:04,941 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:57:04,941 - INFO - Health Classification Model Triggered at 2025-04-14 15:57:04.941713
+2025-04-14 15:57:04,942 - INFO - Prediction: 0
+2025-04-14 15:57:04,942 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:57:04,948 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:57:04.948715
+2025-04-14 15:57:04,951 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:57:04,951 - INFO - Prediction: 1
+2025-04-14 15:57:04,951 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:57:09,957 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:57:09,958 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:57:09,958 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:57:09,958 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:57:09,959 - INFO - Starts processing respiratory rate
+2025-04-14 15:57:09,959 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:57:09,961 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:57:09,966 - INFO - Sucessfully scaled the data.
+2025-04-14 15:57:09,966 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:57:09,967 - INFO - Health Classification Model Triggered at 2025-04-14 15:57:09.967254
+2025-04-14 15:57:09,968 - INFO - Prediction: 0
+2025-04-14 15:57:09,968 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:57:09,973 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:57:09.973839
+2025-04-14 15:57:09,975 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:57:09,975 - INFO - Prediction: 1
+2025-04-14 15:57:09,975 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:57:14,983 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:57:14,985 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:57:14,985 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:57:14,985 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:57:14,986 - INFO - Starts processing respiratory rate
+2025-04-14 15:57:14,986 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:57:14,988 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:57:14,993 - INFO - Sucessfully scaled the data.
+2025-04-14 15:57:14,994 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:57:14,994 - INFO - Health Classification Model Triggered at 2025-04-14 15:57:14.994185
+2025-04-14 15:57:14,996 - INFO - Prediction: 1
+2025-04-14 15:57:14,996 - INFO - Patient for the device_id :- esp32_001 is Not Healthy Please Checkup!
+2025-04-14 15:57:15,001 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:57:15.001099
+2025-04-14 15:57:15,002 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:57:15,003 - INFO - Prediction: 1
+2025-04-14 15:57:15,003 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:57:20,010 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:57:20,012 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:57:20,012 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:57:20,012 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:57:20,012 - INFO - Starts processing respiratory rate
+2025-04-14 15:57:20,012 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:57:20,014 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:57:20,018 - INFO - Sucessfully scaled the data.
+2025-04-14 15:57:20,018 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:57:20,019 - INFO - Health Classification Model Triggered at 2025-04-14 15:57:20.019624
+2025-04-14 15:57:20,020 - INFO - Prediction: 0
+2025-04-14 15:57:20,020 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:57:20,026 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:57:20.026149
+2025-04-14 15:57:20,027 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:57:20,027 - INFO - Prediction: 1
+2025-04-14 15:57:20,028 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:57:25,035 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:57:25,036 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:57:25,036 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:57:25,036 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:57:25,037 - INFO - Starts processing respiratory rate
+2025-04-14 15:57:25,037 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:57:25,039 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:57:25,045 - INFO - Sucessfully scaled the data.
+2025-04-14 15:57:25,045 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:57:25,046 - INFO - Health Classification Model Triggered at 2025-04-14 15:57:25.046755
+2025-04-14 15:57:25,048 - INFO - Prediction: 0
+2025-04-14 15:57:25,048 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:57:25,054 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:57:25.053264
+2025-04-14 15:57:25,055 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:57:25,055 - INFO - Prediction: 1
+2025-04-14 15:57:25,055 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:57:30,063 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:57:30,064 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:57:30,064 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:57:30,065 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:57:30,065 - INFO - Starts processing respiratory rate
+2025-04-14 15:57:30,066 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:57:30,067 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:57:30,076 - INFO - Sucessfully scaled the data.
+2025-04-14 15:57:30,076 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:57:30,076 - INFO - Health Classification Model Triggered at 2025-04-14 15:57:30.076004
+2025-04-14 15:57:30,078 - INFO - Prediction: 0
+2025-04-14 15:57:30,078 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:57:30,084 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:57:30.083428
+2025-04-14 15:57:30,085 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:57:30,086 - INFO - Prediction: 1
+2025-04-14 15:57:30,086 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:57:35,096 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:57:35,097 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:57:35,097 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:57:35,097 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:57:35,098 - INFO - Starts processing respiratory rate
+2025-04-14 15:57:35,098 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:57:35,101 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:57:35,109 - INFO - Sucessfully scaled the data.
+2025-04-14 15:57:35,109 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:57:35,110 - INFO - Health Classification Model Triggered at 2025-04-14 15:57:35.110880
+2025-04-14 15:57:35,112 - INFO - Prediction: 1
+2025-04-14 15:57:35,112 - INFO - Patient for the device_id :- esp32_001 is Not Healthy Please Checkup!
+2025-04-14 15:57:35,118 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:57:35.118885
+2025-04-14 15:57:35,122 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:57:35,122 - INFO - Prediction: 1
+2025-04-14 15:57:35,122 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:57:40,132 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:57:40,134 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:57:40,134 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:57:40,134 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:57:40,135 - INFO - Starts processing respiratory rate
+2025-04-14 15:57:40,135 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:57:40,137 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:57:40,145 - INFO - Sucessfully scaled the data.
+2025-04-14 15:57:40,145 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:57:40,145 - INFO - Health Classification Model Triggered at 2025-04-14 15:57:40.145119
+2025-04-14 15:57:40,147 - INFO - Prediction: 0
+2025-04-14 15:57:40,147 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:57:40,153 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:57:40.153975
+2025-04-14 15:57:40,156 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:57:40,157 - INFO - Prediction: 1
+2025-04-14 15:57:40,157 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:57:45,166 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:57:45,168 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:57:45,168 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:57:45,168 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:57:45,168 - INFO - Starts processing respiratory rate
+2025-04-14 15:57:45,168 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:57:45,170 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:57:45,177 - INFO - Sucessfully scaled the data.
+2025-04-14 15:57:45,178 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:57:45,178 - INFO - Health Classification Model Triggered at 2025-04-14 15:57:45.178675
+2025-04-14 15:57:45,181 - INFO - Prediction: 0
+2025-04-14 15:57:45,181 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:57:45,189 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:57:45.189740
+2025-04-14 15:57:45,192 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:57:45,193 - INFO - Prediction: 1
+2025-04-14 15:57:45,193 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:57:50,202 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:57:50,204 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:57:50,204 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:57:50,204 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:57:50,205 - INFO - Starts processing respiratory rate
+2025-04-14 15:57:50,205 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:57:50,206 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:57:50,213 - INFO - Sucessfully scaled the data.
+2025-04-14 15:57:50,213 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:57:50,213 - INFO - Health Classification Model Triggered at 2025-04-14 15:57:50.213033
+2025-04-14 15:57:50,215 - INFO - Prediction: 0
+2025-04-14 15:57:50,215 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:57:50,221 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:57:50.221551
+2025-04-14 15:57:50,222 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:57:50,223 - INFO - Prediction: 1
+2025-04-14 15:57:50,223 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:57:55,230 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:57:55,232 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:57:55,232 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:57:55,232 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:57:55,233 - INFO - Starts processing respiratory rate
+2025-04-14 15:57:55,233 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:57:55,234 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:57:55,239 - INFO - Sucessfully scaled the data.
+2025-04-14 15:57:55,239 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:57:55,240 - INFO - Health Classification Model Triggered at 2025-04-14 15:57:55.240805
+2025-04-14 15:57:55,242 - INFO - Prediction: 0
+2025-04-14 15:57:55,242 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:57:55,247 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:57:55.247931
+2025-04-14 15:57:55,248 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:57:55,249 - INFO - Prediction: 1
+2025-04-14 15:57:55,250 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:58:00,258 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:58:00,261 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:58:00,262 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:58:00,262 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:58:00,265 - INFO - Starts processing respiratory rate
+2025-04-14 15:58:00,265 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:58:00,269 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:58:00,283 - INFO - Sucessfully scaled the data.
+2025-04-14 15:58:00,283 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:58:00,284 - INFO - Health Classification Model Triggered at 2025-04-14 15:58:00.284625
+2025-04-14 15:58:00,285 - INFO - Prediction: 0
+2025-04-14 15:58:00,285 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:58:00,292 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:58:00.292179
+2025-04-14 15:58:00,293 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:58:00,294 - INFO - Prediction: 1
+2025-04-14 15:58:00,294 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:58:05,302 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:58:05,305 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:58:05,306 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:58:05,306 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:58:05,308 - INFO - Starts processing respiratory rate
+2025-04-14 15:58:05,308 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:58:05,313 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:58:05,331 - INFO - Sucessfully scaled the data.
+2025-04-14 15:58:05,331 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:58:05,331 - INFO - Health Classification Model Triggered at 2025-04-14 15:58:05.331863
+2025-04-14 15:58:05,336 - INFO - Prediction: 0
+2025-04-14 15:58:05,336 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:58:05,341 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:58:05.341909
+2025-04-14 15:58:05,342 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:58:05,342 - INFO - Prediction: 1
+2025-04-14 15:58:05,343 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:58:10,352 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:58:10,353 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:58:10,353 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:58:10,354 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:58:10,354 - INFO - Starts processing respiratory rate
+2025-04-14 15:58:10,355 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:58:10,358 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:58:10,365 - INFO - Sucessfully scaled the data.
+2025-04-14 15:58:10,365 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:58:10,366 - INFO - Health Classification Model Triggered at 2025-04-14 15:58:10.366908
+2025-04-14 15:58:10,367 - INFO - Prediction: 0
+2025-04-14 15:58:10,367 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:58:10,373 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:58:10.373116
+2025-04-14 15:58:10,374 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:58:10,375 - INFO - Prediction: 1
+2025-04-14 15:58:10,375 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:58:15,383 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:58:15,384 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:58:15,385 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:58:15,385 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:58:15,385 - INFO - Starts processing respiratory rate
+2025-04-14 15:58:15,386 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:58:15,388 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:58:15,394 - INFO - Sucessfully scaled the data.
+2025-04-14 15:58:15,394 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:58:15,394 - INFO - Health Classification Model Triggered at 2025-04-14 15:58:15.394166
+2025-04-14 15:58:15,396 - INFO - Prediction: 1
+2025-04-14 15:58:15,396 - INFO - Patient for the device_id :- esp32_001 is Not Healthy Please Checkup!
+2025-04-14 15:58:15,400 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:58:15.400699
+2025-04-14 15:58:15,402 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:58:15,402 - INFO - Prediction: 1
+2025-04-14 15:58:15,402 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:58:20,411 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:58:20,413 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:58:20,413 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:58:20,413 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:58:20,414 - INFO - Starts processing respiratory rate
+2025-04-14 15:58:20,414 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:58:20,415 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:58:20,422 - INFO - Sucessfully scaled the data.
+2025-04-14 15:58:20,422 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:58:20,422 - INFO - Health Classification Model Triggered at 2025-04-14 15:58:20.422314
+2025-04-14 15:58:20,424 - INFO - Prediction: 1
+2025-04-14 15:58:20,424 - INFO - Patient for the device_id :- esp32_001 is Not Healthy Please Checkup!
+2025-04-14 15:58:20,429 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:58:20.429818
+2025-04-14 15:58:20,433 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:58:20,433 - INFO - Prediction: 1
+2025-04-14 15:58:20,433 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:58:25,444 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:58:25,445 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:58:25,445 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:58:25,445 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:58:25,446 - INFO - Starts processing respiratory rate
+2025-04-14 15:58:25,446 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:58:25,447 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:58:25,451 - INFO - Sucessfully scaled the data.
+2025-04-14 15:58:25,451 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:58:25,451 - INFO - Health Classification Model Triggered at 2025-04-14 15:58:25.451991
+2025-04-14 15:58:25,452 - INFO - Prediction: 1
+2025-04-14 15:58:25,453 - INFO - Patient for the device_id :- esp32_001 is Not Healthy Please Checkup!
+2025-04-14 15:58:25,458 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:58:25.458978
+2025-04-14 15:58:25,459 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:58:25,460 - INFO - Prediction: 1
+2025-04-14 15:58:25,460 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:58:30,467 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:58:30,468 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:58:30,469 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:58:30,469 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:58:30,471 - INFO - Starts processing respiratory rate
+2025-04-14 15:58:30,471 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:58:30,472 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:58:30,478 - INFO - Sucessfully scaled the data.
+2025-04-14 15:58:30,478 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:58:30,478 - INFO - Health Classification Model Triggered at 2025-04-14 15:58:30.478197
+2025-04-14 15:58:30,481 - INFO - Prediction: 0
+2025-04-14 15:58:30,482 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:58:30,487 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:58:30.487760
+2025-04-14 15:58:30,489 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:58:30,489 - INFO - Prediction: 1
+2025-04-14 15:58:30,491 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:58:35,499 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:58:35,500 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:58:35,501 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:58:35,501 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:58:35,501 - INFO - Starts processing respiratory rate
+2025-04-14 15:58:35,502 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:58:35,503 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:58:35,508 - INFO - Sucessfully scaled the data.
+2025-04-14 15:58:35,508 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:58:35,508 - INFO - Health Classification Model Triggered at 2025-04-14 15:58:35.508792
+2025-04-14 15:58:35,510 - INFO - Prediction: 0
+2025-04-14 15:58:35,511 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:58:35,516 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:58:35.515293
+2025-04-14 15:58:35,517 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:58:35,518 - INFO - Prediction: 1
+2025-04-14 15:58:35,518 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:58:40,525 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:58:40,527 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:58:40,527 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:58:40,527 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:58:40,527 - INFO - Starts processing respiratory rate
+2025-04-14 15:58:40,528 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:58:40,529 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:58:40,535 - INFO - Sucessfully scaled the data.
+2025-04-14 15:58:40,535 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:58:40,535 - INFO - Health Classification Model Triggered at 2025-04-14 15:58:40.535104
+2025-04-14 15:58:40,537 - INFO - Prediction: 0
+2025-04-14 15:58:40,537 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:58:40,541 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:58:40.541621
+2025-04-14 15:58:40,543 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:58:40,544 - INFO - Prediction: 1
+2025-04-14 15:58:40,544 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:58:45,552 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:58:45,553 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:58:45,554 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:58:45,554 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:58:45,555 - INFO - Starts processing respiratory rate
+2025-04-14 15:58:45,555 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:58:45,557 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:58:45,566 - INFO - Sucessfully scaled the data.
+2025-04-14 15:58:45,566 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:58:45,566 - INFO - Health Classification Model Triggered at 2025-04-14 15:58:45.566657
+2025-04-14 15:58:45,571 - INFO - Prediction: 0
+2025-04-14 15:58:45,571 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:58:45,580 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:58:45.580236
+2025-04-14 15:58:45,583 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:58:45,584 - INFO - Prediction: 1
+2025-04-14 15:58:45,585 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:58:50,605 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:58:50,606 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:58:50,606 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:58:50,606 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:58:50,607 - INFO - Starts processing respiratory rate
+2025-04-14 15:58:50,607 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:58:50,609 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:58:50,617 - INFO - Sucessfully scaled the data.
+2025-04-14 15:58:50,618 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:58:50,618 - INFO - Health Classification Model Triggered at 2025-04-14 15:58:50.618674
+2025-04-14 15:58:50,621 - INFO - Prediction: 0
+2025-04-14 15:58:50,621 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:58:50,629 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:58:50.629612
+2025-04-14 15:58:50,634 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:58:50,634 - INFO - Prediction: 1
+2025-04-14 15:58:50,635 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:58:55,648 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:58:55,650 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:58:55,650 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:58:55,651 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:58:55,651 - INFO - Starts processing respiratory rate
+2025-04-14 15:58:55,652 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:58:55,653 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:58:55,658 - INFO - Sucessfully scaled the data.
+2025-04-14 15:58:55,658 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:58:55,658 - INFO - Health Classification Model Triggered at 2025-04-14 15:58:55.658546
+2025-04-14 15:58:55,660 - INFO - Prediction: 0
+2025-04-14 15:58:55,661 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:58:55,668 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:58:55.668058
+2025-04-14 15:58:55,670 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:58:55,671 - INFO - Prediction: 1
+2025-04-14 15:58:55,672 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:59:00,682 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:59:00,684 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:59:00,685 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:59:00,685 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:59:00,687 - INFO - Starts processing respiratory rate
+2025-04-14 15:59:00,687 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:59:00,690 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:59:00,697 - INFO - Sucessfully scaled the data.
+2025-04-14 15:59:00,698 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:59:00,698 - INFO - Health Classification Model Triggered at 2025-04-14 15:59:00.698698
+2025-04-14 15:59:00,699 - INFO - Prediction: 0
+2025-04-14 15:59:00,699 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:59:00,707 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:59:00.707607
+2025-04-14 15:59:00,708 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:59:00,708 - INFO - Prediction: 1
+2025-04-14 15:59:00,708 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:59:05,717 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:59:05,718 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:59:05,718 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:59:05,719 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:59:05,719 - INFO - Starts processing respiratory rate
+2025-04-14 15:59:05,719 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:59:05,721 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:59:05,726 - INFO - Sucessfully scaled the data.
+2025-04-14 15:59:05,726 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:59:05,727 - INFO - Health Classification Model Triggered at 2025-04-14 15:59:05.727405
+2025-04-14 15:59:05,728 - INFO - Prediction: 0
+2025-04-14 15:59:05,728 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:59:05,737 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:59:05.737915
+2025-04-14 15:59:05,738 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:59:05,739 - INFO - Prediction: 1
+2025-04-14 15:59:05,740 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:59:10,752 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:59:10,754 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:59:10,755 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:59:10,755 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:59:10,756 - INFO - Starts processing respiratory rate
+2025-04-14 15:59:10,757 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:59:10,762 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:59:10,775 - INFO - Sucessfully scaled the data.
+2025-04-14 15:59:10,775 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:59:10,775 - INFO - Health Classification Model Triggered at 2025-04-14 15:59:10.775303
+2025-04-14 15:59:10,782 - INFO - Prediction: 0
+2025-04-14 15:59:10,782 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:59:10,804 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:59:10.804464
+2025-04-14 15:59:10,810 - INFO - Actual Output :- [[1.]]
+2025-04-14 15:59:10,812 - INFO - Prediction: 1
+2025-04-14 15:59:10,812 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:59:22,882 - INFO - Getting the current active devices
+2025-04-14 15:59:22,903 - INFO - Current Active Devices :- {'esp32_001'}
+2025-04-14 15:59:22,904 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:59:22,904 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:59:22,905 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:59:22,905 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:59:22,908 - INFO - Starts processing respiratory rate
+2025-04-14 15:59:22,909 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:59:22,916 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:59:22,939 - INFO - Sucessfully scaled the data.
+2025-04-14 15:59:22,939 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:59:22,943 - INFO - Health Classification Model Triggered at 2025-04-14 15:59:22.940705
+2025-04-14 15:59:22,946 - INFO - Prediction: 0
+2025-04-14 15:59:22,947 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:59:22,951 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:59:22.951733
+2025-04-14 15:59:23,046 - INFO - Raw Output: [[1.]]
+2025-04-14 15:59:23,047 - INFO - Prediction: 1
+2025-04-14 15:59:23,047 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:59:28,057 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:59:28,058 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:59:28,058 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:59:28,059 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:59:28,060 - INFO - Starts processing respiratory rate
+2025-04-14 15:59:28,060 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:59:28,061 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:59:28,069 - INFO - Sucessfully scaled the data.
+2025-04-14 15:59:28,069 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:59:28,070 - INFO - Health Classification Model Triggered at 2025-04-14 15:59:28.070939
+2025-04-14 15:59:28,072 - INFO - Prediction: 0
+2025-04-14 15:59:28,072 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:59:28,077 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:59:28.077938
+2025-04-14 15:59:28,079 - INFO - Raw Output: [[1.]]
+2025-04-14 15:59:28,079 - INFO - Prediction: 1
+2025-04-14 15:59:28,079 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:59:33,090 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:59:33,091 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:59:33,091 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:59:33,091 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:59:33,092 - INFO - Starts processing respiratory rate
+2025-04-14 15:59:33,092 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:59:33,094 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:59:33,098 - INFO - Sucessfully scaled the data.
+2025-04-14 15:59:33,099 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:59:33,099 - INFO - Health Classification Model Triggered at 2025-04-14 15:59:33.099957
+2025-04-14 15:59:33,101 - INFO - Prediction: 0
+2025-04-14 15:59:33,103 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:59:33,109 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:59:33.109702
+2025-04-14 15:59:33,110 - INFO - Raw Output: [[1.]]
+2025-04-14 15:59:33,111 - INFO - Prediction: 1
+2025-04-14 15:59:33,111 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:59:38,121 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:59:38,123 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:59:38,123 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:59:38,124 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:59:38,124 - INFO - Starts processing respiratory rate
+2025-04-14 15:59:38,124 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:59:38,126 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:59:38,130 - INFO - Sucessfully scaled the data.
+2025-04-14 15:59:38,130 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:59:38,130 - INFO - Health Classification Model Triggered at 2025-04-14 15:59:38.130102
+2025-04-14 15:59:38,132 - INFO - Prediction: 0
+2025-04-14 15:59:38,132 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:59:38,137 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:59:38.137109
+2025-04-14 15:59:38,138 - INFO - Raw Output: [[1.]]
+2025-04-14 15:59:38,139 - INFO - Prediction: 1
+2025-04-14 15:59:38,139 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:59:43,146 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:59:43,147 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:59:43,148 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:59:43,148 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:59:43,150 - INFO - Starts processing respiratory rate
+2025-04-14 15:59:43,151 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:59:43,153 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:59:43,161 - INFO - Sucessfully scaled the data.
+2025-04-14 15:59:43,161 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:59:43,162 - INFO - Health Classification Model Triggered at 2025-04-14 15:59:43.162827
+2025-04-14 15:59:43,164 - INFO - Prediction: 0
+2025-04-14 15:59:43,164 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:59:43,172 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:59:43.172599
+2025-04-14 15:59:43,173 - INFO - Raw Output: [[1.]]
+2025-04-14 15:59:43,174 - INFO - Prediction: 1
+2025-04-14 15:59:43,174 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:59:48,182 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:59:48,182 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:59:48,184 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:59:48,184 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:59:48,185 - INFO - Starts processing respiratory rate
+2025-04-14 15:59:48,185 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:59:48,189 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:59:48,197 - INFO - Sucessfully scaled the data.
+2025-04-14 15:59:48,197 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:59:48,198 - INFO - Health Classification Model Triggered at 2025-04-14 15:59:48.198360
+2025-04-14 15:59:48,199 - INFO - Prediction: 0
+2025-04-14 15:59:48,199 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:59:48,206 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:59:48.206889
+2025-04-14 15:59:48,208 - INFO - Raw Output: [[1.]]
+2025-04-14 15:59:48,209 - INFO - Prediction: 1
+2025-04-14 15:59:48,209 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:59:53,217 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:59:53,218 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:59:53,219 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:59:53,219 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:59:53,221 - INFO - Starts processing respiratory rate
+2025-04-14 15:59:53,221 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:59:53,225 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:59:53,237 - INFO - Sucessfully scaled the data.
+2025-04-14 15:59:53,237 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:59:53,237 - INFO - Health Classification Model Triggered at 2025-04-14 15:59:53.237104
+2025-04-14 15:59:53,240 - INFO - Prediction: 0
+2025-04-14 15:59:53,240 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:59:53,247 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:59:53.247143
+2025-04-14 15:59:53,249 - INFO - Raw Output: [[1.]]
+2025-04-14 15:59:53,250 - INFO - Prediction: 1
+2025-04-14 15:59:53,250 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 15:59:58,258 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 15:59:58,261 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 15:59:58,262 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 15:59:58,263 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 15:59:58,265 - INFO - Starts processing respiratory rate
+2025-04-14 15:59:58,267 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 15:59:58,271 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 15:59:58,280 - INFO - Sucessfully scaled the data.
+2025-04-14 15:59:58,281 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 15:59:58,281 - INFO - Health Classification Model Triggered at 2025-04-14 15:59:58.281847
+2025-04-14 15:59:58,284 - INFO - Prediction: 0
+2025-04-14 15:59:58,284 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 15:59:58,291 - INFO - CVD Prediction Model Triggered at 2025-04-14 15:59:58.291370
+2025-04-14 15:59:58,292 - INFO - Raw Output: [[1.]]
+2025-04-14 15:59:58,292 - INFO - Prediction: 1
+2025-04-14 15:59:58,292 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 16:00:03,302 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 16:00:03,304 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 16:00:03,304 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 16:00:03,304 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 16:00:03,305 - INFO - Starts processing respiratory rate
+2025-04-14 16:00:03,305 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 16:00:03,307 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 16:00:03,313 - INFO - Sucessfully scaled the data.
+2025-04-14 16:00:03,313 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 16:00:03,313 - INFO - Health Classification Model Triggered at 2025-04-14 16:00:03.313580
+2025-04-14 16:00:03,315 - INFO - Prediction: 0
+2025-04-14 16:00:03,316 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 16:00:03,322 - INFO - CVD Prediction Model Triggered at 2025-04-14 16:00:03.322122
+2025-04-14 16:00:03,323 - INFO - Raw Output: [[1.]]
+2025-04-14 16:00:03,323 - INFO - Prediction: 1
+2025-04-14 16:00:03,324 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 16:00:08,332 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 16:00:08,333 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 16:00:08,334 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 16:00:08,334 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 16:00:08,334 - INFO - Starts processing respiratory rate
+2025-04-14 16:00:08,335 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 16:00:08,336 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 16:00:08,343 - INFO - Sucessfully scaled the data.
+2025-04-14 16:00:08,343 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 16:00:08,344 - INFO - Health Classification Model Triggered at 2025-04-14 16:00:08.344113
+2025-04-14 16:00:08,346 - INFO - Prediction: 1
+2025-04-14 16:00:08,347 - INFO - Patient for the device_id :- esp32_001 is Not Healthy Please Checkup!
+2025-04-14 16:00:08,353 - INFO - CVD Prediction Model Triggered at 2025-04-14 16:00:08.352644
+2025-04-14 16:00:08,355 - INFO - Raw Output: [[1.]]
+2025-04-14 16:00:08,355 - INFO - Prediction: 1
+2025-04-14 16:00:08,355 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 16:00:13,363 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 16:00:13,364 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 16:00:13,365 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 16:00:13,365 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 16:00:13,365 - INFO - Starts processing respiratory rate
+2025-04-14 16:00:13,366 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 16:00:13,367 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 16:00:13,372 - INFO - Sucessfully scaled the data.
+2025-04-14 16:00:13,372 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 16:00:13,372 - INFO - Health Classification Model Triggered at 2025-04-14 16:00:13.372128
+2025-04-14 16:00:13,374 - INFO - Prediction: 0
+2025-04-14 16:00:13,374 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 16:00:13,378 - INFO - CVD Prediction Model Triggered at 2025-04-14 16:00:13.378181
+2025-04-14 16:00:13,380 - INFO - Raw Output: [[1.]]
+2025-04-14 16:00:13,380 - INFO - Prediction: 1
+2025-04-14 16:00:13,381 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 16:00:18,388 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 16:00:18,388 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 16:00:18,389 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 16:00:18,389 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 16:00:18,389 - INFO - Starts processing respiratory rate
+2025-04-14 16:00:18,389 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 16:00:18,391 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 16:00:18,395 - INFO - Sucessfully scaled the data.
+2025-04-14 16:00:18,395 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 16:00:18,396 - INFO - Health Classification Model Triggered at 2025-04-14 16:00:18.396812
+2025-04-14 16:00:18,397 - INFO - Prediction: 0
+2025-04-14 16:00:18,398 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 16:00:18,402 - INFO - CVD Prediction Model Triggered at 2025-04-14 16:00:18.402331
+2025-04-14 16:00:18,404 - INFO - Raw Output: [[1.]]
+2025-04-14 16:00:18,404 - INFO - Prediction: 1
+2025-04-14 16:00:18,404 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 16:00:23,414 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 16:00:23,416 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 16:00:23,416 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 16:00:23,416 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 16:00:23,417 - INFO - Starts processing respiratory rate
+2025-04-14 16:00:23,417 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 16:00:23,419 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 16:00:23,428 - INFO - Sucessfully scaled the data.
+2025-04-14 16:00:23,429 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 16:00:23,429 - INFO - Health Classification Model Triggered at 2025-04-14 16:00:23.429671
+2025-04-14 16:00:23,432 - INFO - Prediction: 0
+2025-04-14 16:00:23,432 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 16:00:23,440 - INFO - CVD Prediction Model Triggered at 2025-04-14 16:00:23.440188
+2025-04-14 16:00:23,442 - INFO - Raw Output: [[1.]]
+2025-04-14 16:00:23,443 - INFO - Prediction: 1
+2025-04-14 16:00:23,443 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 16:00:28,457 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 16:00:28,458 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 16:00:28,458 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 16:00:28,458 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 16:00:28,458 - INFO - Starts processing respiratory rate
+2025-04-14 16:00:28,459 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 16:00:28,460 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 16:00:28,465 - INFO - Sucessfully scaled the data.
+2025-04-14 16:00:28,466 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 16:00:28,466 - INFO - Health Classification Model Triggered at 2025-04-14 16:00:28.466737
+2025-04-14 16:00:28,467 - INFO - Prediction: 1
+2025-04-14 16:00:28,468 - INFO - Patient for the device_id :- esp32_001 is Not Healthy Please Checkup!
+2025-04-14 16:00:28,473 - INFO - CVD Prediction Model Triggered at 2025-04-14 16:00:28.473786
+2025-04-14 16:00:28,476 - INFO - Raw Output: [[1.]]
+2025-04-14 16:00:28,476 - INFO - Prediction: 1
+2025-04-14 16:00:28,477 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 16:00:33,486 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 16:00:33,487 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 16:00:33,488 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 16:00:33,488 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 16:00:33,488 - INFO - Starts processing respiratory rate
+2025-04-14 16:00:33,489 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 16:00:33,490 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 16:00:33,496 - INFO - Sucessfully scaled the data.
+2025-04-14 16:00:33,496 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 16:00:33,496 - INFO - Health Classification Model Triggered at 2025-04-14 16:00:33.496464
+2025-04-14 16:00:33,497 - INFO - Prediction: 0
+2025-04-14 16:00:33,498 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 16:00:33,504 - INFO - CVD Prediction Model Triggered at 2025-04-14 16:00:33.504994
+2025-04-14 16:00:33,505 - INFO - Raw Output: [[1.]]
+2025-04-14 16:00:33,506 - INFO - Prediction: 1
+2025-04-14 16:00:33,506 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 16:01:27,626 - INFO - Getting the current active devices
+2025-04-14 16:01:27,680 - INFO - Current Active Devices :- {'esp32_001'}
+2025-04-14 16:01:27,681 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 16:01:27,682 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 16:01:27,682 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 16:01:27,682 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 16:01:27,686 - INFO - Starts processing respiratory rate
+2025-04-14 16:01:27,686 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 16:01:27,697 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 16:01:27,725 - INFO - Sucessfully scaled the data.
+2025-04-14 16:01:27,726 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 16:01:27,730 - INFO - Health Classification Model Triggered at 2025-04-14 16:01:27.727512
+2025-04-14 16:01:27,736 - INFO - Prediction: 1
+2025-04-14 16:01:27,736 - INFO - Patient for the device_id :- esp32_001 is Not Healthy Please Checkup!
+2025-04-14 16:01:27,744 - INFO - CVD Prediction Model Triggered at 2025-04-14 16:01:27.744682
+2025-04-14 16:01:27,842 - INFO - Raw Output: [[1.]]
+2025-04-14 16:01:27,842 - INFO - Prediction: 1
+2025-04-14 16:01:27,842 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 16:01:27,843 - INFO - Starting insert data to S3 Bucket.
+2025-04-14 16:01:30,652 - ERROR - Cannot upload data to S3 due to :- Unable to locate credentials
+2025-04-14 16:02:00,656 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 16:02:00,662 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 16:02:00,663 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 16:02:00,663 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 16:02:00,667 - INFO - Starts processing respiratory rate
+2025-04-14 16:02:00,667 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 16:02:00,672 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 16:02:00,685 - INFO - Sucessfully scaled the data.
+2025-04-14 16:02:00,685 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 16:02:00,685 - INFO - Health Classification Model Triggered at 2025-04-14 16:02:00.685511
+2025-04-14 16:02:00,688 - INFO - Prediction: 1
+2025-04-14 16:02:00,688 - INFO - Patient for the device_id :- esp32_001 is Not Healthy Please Checkup!
+2025-04-14 16:02:00,696 - INFO - CVD Prediction Model Triggered at 2025-04-14 16:02:00.696049
+2025-04-14 16:02:00,699 - INFO - Raw Output: [[1.]]
+2025-04-14 16:02:00,700 - INFO - Prediction: 1
+2025-04-14 16:02:00,700 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 16:02:00,701 - INFO - Starting insert data to S3 Bucket.
+2025-04-14 16:02:02,740 - ERROR - Cannot upload data to S3 due to :- Unable to locate credentials
+2025-04-14 16:02:32,741 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 16:02:32,748 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 16:02:32,748 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 16:02:32,748 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 16:02:32,753 - INFO - Starts processing respiratory rate
+2025-04-14 16:02:32,754 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 16:02:32,760 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 16:02:32,776 - INFO - Sucessfully scaled the data.
+2025-04-14 16:02:32,776 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 16:02:32,777 - INFO - Health Classification Model Triggered at 2025-04-14 16:02:32.777076
+2025-04-14 16:02:32,782 - INFO - Prediction: 0
+2025-04-14 16:02:32,782 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 16:02:32,795 - INFO - CVD Prediction Model Triggered at 2025-04-14 16:02:32.795336
+2025-04-14 16:02:32,801 - INFO - Raw Output: [[1.]]
+2025-04-14 16:02:32,802 - INFO - Prediction: 1
+2025-04-14 16:02:32,803 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 16:02:32,805 - INFO - Starting insert data to S3 Bucket.
+2025-04-14 16:02:34,846 - ERROR - Cannot upload data to S3 due to :- Unable to locate credentials
+2025-04-14 16:03:04,848 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 16:03:04,850 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 16:03:04,851 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 16:03:04,851 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 16:03:04,852 - INFO - Starts processing respiratory rate
+2025-04-14 16:03:04,852 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 16:03:04,854 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 16:03:04,863 - INFO - Sucessfully scaled the data.
+2025-04-14 16:03:04,864 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 16:03:04,865 - INFO - Health Classification Model Triggered at 2025-04-14 16:03:04.864036
+2025-04-14 16:03:04,867 - INFO - Prediction: 0
+2025-04-14 16:03:04,867 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 16:03:04,873 - INFO - CVD Prediction Model Triggered at 2025-04-14 16:03:04.873416
+2025-04-14 16:03:04,875 - INFO - Raw Output: [[1.]]
+2025-04-14 16:03:04,875 - INFO - Prediction: 1
+2025-04-14 16:03:04,875 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 16:03:04,877 - INFO - Starting insert data to S3 Bucket.
+2025-04-14 16:03:06,901 - ERROR - Cannot upload data to S3 due to :- Unable to locate credentials
+2025-04-14 16:03:36,904 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 16:03:36,910 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 16:03:36,911 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 16:03:36,912 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 16:03:36,921 - INFO - Starts processing respiratory rate
+2025-04-14 16:03:36,922 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 16:03:36,932 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 16:03:36,966 - INFO - Sucessfully scaled the data.
+2025-04-14 16:03:36,966 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 16:03:36,967 - INFO - Health Classification Model Triggered at 2025-04-14 16:03:36.967927
+2025-04-14 16:03:36,978 - INFO - Prediction: 0
+2025-04-14 16:03:36,979 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 16:03:36,986 - INFO - CVD Prediction Model Triggered at 2025-04-14 16:03:36.986345
+2025-04-14 16:03:36,989 - INFO - Raw Output: [[1.]]
+2025-04-14 16:03:36,989 - INFO - Prediction: 1
+2025-04-14 16:03:36,990 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 16:03:36,992 - INFO - Starting insert data to S3 Bucket.
+2025-04-14 16:05:41,998 - INFO - Getting the current active devices
+2025-04-14 16:05:42,059 - INFO - Current Active Devices :- {'esp32_001'}
+2025-04-14 16:05:42,059 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 16:05:42,061 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 16:05:42,061 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 16:05:42,061 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 16:05:42,065 - INFO - Starts processing respiratory rate
+2025-04-14 16:05:42,065 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 16:05:42,074 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 16:05:42,098 - INFO - Sucessfully scaled the data.
+2025-04-14 16:05:42,099 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 16:05:42,101 - INFO - Health Classification Model Triggered at 2025-04-14 16:05:42.099084
+2025-04-14 16:05:42,105 - INFO - Prediction: 0
+2025-04-14 16:05:42,106 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 16:05:42,113 - INFO - CVD Prediction Model Triggered at 2025-04-14 16:05:42.113840
+2025-04-14 16:05:42,251 - INFO - Raw Output: [[1.]]
+2025-04-14 16:05:42,251 - INFO - Prediction: 1
+2025-04-14 16:05:42,251 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 16:05:42,252 - INFO - Starting insert data to S3 Bucket.
+2025-04-14 16:05:42,262 - INFO - Found credentials in environment variables.
+2025-04-14 16:05:43,894 - INFO - Sucessfully inserted data into S3 Bucket.
+2025-04-14 16:06:13,902 - INFO - Started retrieving information from Redis for the device id:- esp32_001
+2025-04-14 16:06:13,917 - INFO - Sucessfully retrieved the latest health data for the device_id :- esp32_001
+2025-04-14 16:06:13,920 - INFO - latest data for the device id esp32_001 :- [b'{"device_id": "esp32_001", "ir_value": "55978", "temperature": "38.12", "oxygen_saturation": "98", "heart_rate": "66", "timestamp": "2025-04-14 15:14:13.870552"}']
+2025-04-14 16:06:13,923 - INFO - Starting the pre-process of MQTT Data
+2025-04-14 16:06:13,937 - INFO - Starts processing respiratory rate
+2025-04-14 16:06:13,938 - INFO - Retrieving the IR values for the last 10 seconds
+2025-04-14 16:06:13,950 - INFO - Estimated respiratory rate for the device id esp32_001 :- 12.0
+2025-04-14 16:06:14,013 - INFO - Sucessfully scaled the data.
+2025-04-14 16:06:14,013 - INFO - Sucessfully pre-processed the data to feed into the ML and DL Models.
+2025-04-14 16:06:14,016 - INFO - Health Classification Model Triggered at 2025-04-14 16:06:14.014062
+2025-04-14 16:06:14,028 - INFO - Prediction: 0
+2025-04-14 16:06:14,029 - INFO - Patient for the device_id :- esp32_001 is currently Healthy!
+2025-04-14 16:06:14,036 - INFO - CVD Prediction Model Triggered at 2025-04-14 16:06:14.036136
+2025-04-14 16:06:14,058 - INFO - Raw Output: [[1.]]
+2025-04-14 16:06:14,058 - INFO - Prediction: 1
+2025-04-14 16:06:14,059 - INFO - Patient for the device_id :- esp32_001 is showing CVD Symptoms! Please Check!!!
+2025-04-14 16:06:14,060 - INFO - Starting insert data to S3 Bucket.
+2025-04-14 16:06:15,165 - INFO - Sucessfully inserted data into S3 Bucket.

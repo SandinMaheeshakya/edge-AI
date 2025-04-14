@@ -2,6 +2,7 @@ import pandas as pd
 import joblib
 import logging
 import colorlog
+import random
 import os
 import boto3
 import time
@@ -158,13 +159,7 @@ def preprocess_data(retrieved_data, device):
             ]
         )
         """
-
-        retrieved_df['heart_rate'] = 89
-        retrieved_df['oxygen_saturation'] = 95
-        retrieved_df['respiratory_rate'] = 16
-        retrieved_df['temperature'] = 37.5 
-        print(retrieved_df)
-
+        
         logger.info("Sucessfully scaled the data.")
 
         logger.info(
@@ -244,7 +239,7 @@ def run_cvd_classification_model(df:pd.DataFrame,device_id):
         interpreter.invoke()
         output_data = interpreter.get_tensor(output_details[0]['index'])
 
-        logger.info(f"Actual Output :- {output_data}")
+        logger.info(f"Raw Output: {output_data}")
 
         logger.info(f"Prediction: {int(output_data[0][0])}")
 
@@ -310,6 +305,6 @@ if __name__ == "__main__":
             )
             print(data_with_health_predictions)
             data_with_cvd_predictions = run_cvd_classification_model(data_with_health_predictions,device)
-            print(data_with_cvd_predictions)
-
+            upload_data_s3(data_with_cvd_predictions)
+            
         time.sleep(30)
