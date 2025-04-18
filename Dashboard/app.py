@@ -1,20 +1,43 @@
+import pymysql
 from flask import Flask, render_template, request, redirect, url_for, session
 import boto3
 import pandas as pd
 from io import StringIO
+import psycopg2
+from psycopg2.extras import RealDictCursor
+
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Needed for sessions
 
-# Dummy user data (Replace this with actual database checks)
-users = {
-    "user@example.com": {"password": "password123"}
-}
+# PostgreSQL Database connection details
+DB_HOST = 'localhost'
+DB_USER = 'postgres'
+DB_PASSWORD = '12345'
+DB_NAME = 'medimy'
+DB_PORT = 5433  # Default PostgreSQL port
+
+def connect_to_db():
+    """Establish a connection to the PostgreSQL database."""
+    try:
+        connection = psycopg2.connect(
+            host=DB_HOST,
+            user=DB_USER,
+            password=DB_PASSWORD,
+            dbname=DB_NAME,
+            port=DB_PORT
+        )
+        return connection
+    except Exception as e:
+        print(f"Database connection failed: {e}")
+        return None
+    
+
 s3 = boto3.client('s3', aws_access_key_id='AKIAXYKJUQCRERIV5OAR', aws_secret_access_key='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', region_name='ap-south-1')
 
 
 def fetch_patient_data():
     s3 = boto3.client('s3')
-    obj = s3.get_object(Bucket='data-engineering-bucket', Key='Analyzed_Health_Condition_Data_Base.csv')
+    obj = s3.get_object(Bucket='data-engineering-bucket', Key='device_output.csv')
     csv_data = obj['Body'].read().decode('utf-8')
     df = pd.read_csv(StringIO(csv_data))
 
@@ -46,17 +69,32 @@ def sign():
         email = request.form['email']
         password = request.form['password']
 
-        # Check if user exists and password is correct
-        if email in users and users[email]["password"] == password:
-            # Store user info in session
-            session['user'] = email
-            return redirect(url_for('dashboard'))
+        # Connect to the database
+        connection = connect_to_db()
+        if connection:
+            try:
+                cursor = connection.cursor(cursor_factory=RealDictCursor)
+                # Query the admin table to check credentials
+                query = "SELECT * FROM admin WHERE email = %s AND password = %s;"
+                cursor.execute(query, (email, password))
+                admin = cursor.fetchone()
+                cursor.close()
+                connection.close()
+
+                if admin:
+                    # Store user info in session
+                    session['user'] = admin['email']
+                    return redirect(url_for('dashboard'))
+                else:
+                    # Invalid credentials, show an error message
+                    return render_template('signin.html', error="Invalid credentials")
+            except Exception as e:
+                print(f"Error querying the database: {e}")
+                return render_template('signin.html', error="An error occurred. Please try again.")
         else:
-            # Invalid credentials, show an error message
-            return render_template('signin.html', error="Invalid credentials")
+            return render_template('signin.html', error="Database connection failed.")
 
     return render_template('signin.html')
-
 
 # Route for the dashboard page
 @app.route('/dashboard')
@@ -72,24 +110,54 @@ def dashboard():
 @app.route('/patients')
 def load_patients_data():
     try:
-        # Fetch the file from S3
-        obj = s3.get_object(Bucket='data-engineering-bucket', Key='Analyzed_Health_Condition_Data_Base.csv')
+        # Step 1: Load CSV from S3
+        obj = s3.get_object(Bucket='data-engineering-bucket', Key='device_output.csv')
         csv_data = obj['Body'].read().decode('utf-8')
-
-        # Convert CSV data into a DataFrame
         df = pd.read_csv(StringIO(csv_data))
 
-        # Replace the healthcare_target values with 'Good' and 'Bad'
-        df['healthcare_target'] = df['healthcare_target'].replace({1: 'Good', 0: 'Bad'})
+        # Ensure consistent column names
+        if 'user_id' in df.columns:
+            df.rename(columns={'user_id': 'userid'}, inplace=True)
 
-        # Optionally, limit the rows shown to avoid long output (adjust as necessary)
-        patients_data = df.head(10).to_html(classes='table table-striped')
+        # Step 2: Connect to DB
+        connection = connect_to_db()
+        if not connection:
+            return "Database connection failed."
+        cursor = connection.cursor(cursor_factory=RealDictCursor)
 
-        # Render the 'patients.html' template, passing the patients data
-        return render_template('patients.html', patients_data=patients_data)
+        # Step 3: Fetch assignments with device_id and userid
+        cursor.execute('SELECT * FROM assignments;')
+        assignments = pd.DataFrame(cursor.fetchall())
+
+        # Step 4: Fetch user names
+        cursor.execute('SELECT userid, name FROM "user";')
+        users = pd.DataFrame(cursor.fetchall())
+
+        cursor.close()
+        connection.close()
+
+        # Step 5: Merge assignments with usernames
+        assignments = assignments.merge(users, on='userid', how='left')
+
+        # Step 6: Merge with S3 CSV on device_id
+        merged = assignments.merge(df, on='device_id', how='inner', suffixes=('_db', '_s3'))
+
+        # Step 7: Replace health_condition values
+        if 'health_condition' in merged.columns:
+            merged['health_condition'] = merged['health_condition'].replace({1: 'Good', 0: 'Bad'})
+
+
+        final_df = merged[['device_id', 'userid', 'name', 'temperature', 'oxygen_saturation',
+                           'heart_rate', 'timestamp', 'respiratory_rate',
+                           'health_condition', 'health_condition_warning',
+                           'cvd_condition', 'cvd_condition_warning']].head(20)
+
+        # Step 8: Render to template
+        return render_template('patients.html', patients=final_df.to_dict(orient='records'))
 
     except Exception as e:
-        return f"<h2>S3 Connection Failed:</h2><pre>{str(e)}</pre>"
+        return f"<h2>Error:</h2><pre>{str(e)}</pre>"
+
 
 
 @app.route('/logout')
@@ -97,22 +165,64 @@ def logout():
     session.pop('user', None)  # Remove the user from the session
     return redirect(url_for('sign'))
 
-@app.route('/test_s3')
-def test_s3_connection():
+def get_oxygen_level_data():
+    obj = s3.get_object(Bucket='data-engineering-bucket', Key='device_output.csv')
+    csv_data = obj['Body'].read().decode('utf-8')
+    df = pd.read_csv(StringIO(csv_data))
+
+    # Convert timestamp to datetime
+    df['timestamp'] = pd.to_datetime(df['timestamp'])
+
+    # Group by time for trend
+    trend_df = df.groupby(['timestamp']).oxygen_saturation.mean().reset_index()
+
+    # Group by user/device for stats
+    stats_df = df.groupby('userid').oxygen_saturation.mean().reset_index()
+
+    return {
+        "trend": trend_df.to_dict(orient='records'),
+        "stats": stats_df.to_dict(orient='records')
+    }
+
+
+@app.route('/assign_device', methods=['GET', 'POST'])
+def assign_device():
+    connection = connect_to_db()
+    if not connection:
+        return "Database connection failed."
+
     try:
-        # Fetch the file
-        obj = s3.get_object(Bucket='data-engineering-bucket', Key='Analyzed_Health_Condition_Data_Base.csv')
-        csv_data = obj['Body'].read().decode('utf-8')
+        cursor = connection.cursor(cursor_factory=RealDictCursor)
+        # Fetch users from the user table
+        cursor.execute('SELECT "userid", "name" FROM "user";')  # Replace "fullname" with your actual column name
+        users = cursor.fetchall()
 
-        # Convert to DataFrame
-        df = pd.read_csv(StringIO(csv_data))
+        # Fetch devices from the device table
+        cursor.execute('SELECT "device_id" FROM "device";')
+        devices = cursor.fetchall()
 
-        # Optionally show only a few rows to avoid long output
-        html_table = df.head(10).to_html(classes='table table-striped')
+        if request.method == 'POST':
+            # Handle form submission
+            user_id = request.form['user_id']
+            device_id = request.form['device_id']
 
-        return f"<h2>S3 Connection Successful! Showing Data:</h2>{html_table}"
+            # Insert the assignment into a hypothetical assignments table
+            cursor.execute(
+                "INSERT INTO assignments (userid, device_id) VALUES (%s, %s);",
+                (user_id, device_id)
+            )
+            connection.commit()
+            return render_template('assign_device.html', users=users, devices=devices, success="Device assigned successfully!")
+
+        return render_template('assign_device.html', users=users, devices=devices)
+
     except Exception as e:
-        return f"<h2>S3 Connection Failed:</h2><pre>{str(e)}</pre>"
+        print(f"Error: {e}")
+        return "An error occurred while fetching data."
+    finally:
+        cursor.close()
+        connection.close()
+
 
 
 if __name__ == "__main__":

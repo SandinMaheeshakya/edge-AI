@@ -1,139 +1,64 @@
+/* General body styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-wrap: wrap;
-}
-
-.container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
-    gap: 20px; /* Adds space between the cards */
-    justify-items: center; /* Centers the cards horizontally within their grid cell */
-    margin-top: 20px;
-    width: 100%;
-}
-
-.card {
-    width: 100%; /* Ensures the card takes full width of its grid cell */
-    max-width: 350px; /* Max width for each card */
-    padding: 20px;
-    background: #ffffff; /* Gradient background */
-    border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
-    text-align: center;
-    position: relative;
-    margin: 0 auto; /* Centers the card within its container */
-    color: white; /* White text for contrast */
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-    background: #FFFFF7; /* Color change on hover */
-}
-
-.card img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-    border: 2px solid white; /* White border around the image */
-}
-
-.card h3 {
-    font-size: 18px;
-    margin: 5px 0;
-    color: #000000; /* White text for the name */
-}
-
-.card p {
-    font-size: 14px;
-    color: #000000; /* Lighter text for the position */
-    margin-bottom: 10px;
-}
-
-.status {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
-    border-top: 1px solid #fff; /* White border between status and card info */
-    margin-top: 10px;
-}
-
-.status div {
-    text-align: center;
-}
-
-.status div span {
-    font-weight: bold;
-    display: block;
-    color: #000000; /* White text for the status labels */
-}
-
-.status div small {
-    font-size: 12px;
-    color: #000000; /* Lighter text for the status details */
-}
-
-/* Modal background */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    max-width: 600px;
-    width: 100%;
-    position: relative;
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    cursor: pointer;
-}
-
-.modal.active {
-    display: flex;
-}
-
-canvas {
-    width: 100% !important;  /* Make it responsive */
-    height: 200px !important; /* Set a fixed height */
-}
-
-
-/* Styling for the health list */
-#empHealth {
-    list-style-type: none;
-    padding: 0;
+    background-color: #f0f2f5;
     margin: 0;
+    padding: 0;
 }
 
-#empHealth li {
-    padding: 5px 0;
-    font-size: 16px;
+/* Container styling */
+.container-fluid, .container {
+    padding: 20px;
+}
+
+/* Table header */
+#patientsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Table Head Row */
+#patientsTable thead tr {
+    background-color: #0d6efd;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* Header and data cells */
+#patientsTable th,
+#patientsTable td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 13px;
+}
+
+/* Hover effect on table rows */
+#patientsTable tbody tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease;
+}
+
+/* Zebra striping */
+#patientsTable tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* Bold warnings or bad conditions */
+td.health-warning,
+td.cvd-warning {
+    font-weight: bold;
+    color: red;
+}
+
+/* Good condition color (optional) */
+td.good-condition {
+    color: green;
 }

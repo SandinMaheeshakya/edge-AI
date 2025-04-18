@@ -46,7 +46,7 @@
 
                 <div class="navbar-nav w-100">
                     <a href="/dashboard" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
+                    <a href="assign_device" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Device</a>
                     <a href="/patients" class="nav-item nav-link active"><i class="fa fa-th me-2"></i>patients</a>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
                     <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
@@ -67,9 +67,11 @@
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
-                <form class="d-none d-md-flex ms-4">
-                    <input class="form-control border-0" type="search" placeholder="Search">
+                <form class="d-none d-md-flex ms-4" method="GET" action="{{ url_for('load_patients_data') }}">
+                    <input class="form-control border-0" type="search" name="search" placeholder="Search by name">
+                    <button type="submit" class="btn btn-primary ms-2">Search</button>
                 </form>
+
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -153,12 +155,49 @@
             <div class="container-fluid pt-4 px-4">
                 <h2 class="text-primary mb-0">Patients Data</h2>
                 <div class="container mt-4">
-                    <!-- Render the patients table dynamically -->
-                    <div>
-                        {{ patients_data | safe }}
-                    </div>
+                    <table id="patientsTable" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>User ID</th>
+                                <th>Name</th>
+                                <th>Device ID</th>
+                                <th>Temperature</th>
+                                <th>Oxygen Saturation</th>
+                                <th>Heart Rate</th>
+                                <th>Timestamp</th>
+                                <th>Respiratory Rate</th>
+                                <th>Health Condition</th>
+                                <th>Health Warning</th>
+                                <th>CVD Condition</th>
+                                <th>CVD Warning</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in patients %}
+                            <tr>
+                                <td>{{ row.userid }}</td>
+                                <td>{{ row.name }}</td>
+                                <td>{{ row.device_id }}</td>
+                                <td>{{ row.temperature }}</td>
+                                <td>{{ row.oxygen_saturation }}</td>
+                                <td>{{ row.heart_rate }}</td>
+                                <td>{{ row.timestamp }}</td>
+                                <td>{{ row.respiratory_rate }}</td>
+                                <td>{{ row.health_condition }}</td>
+                                <td class="{% if row.health_condition_warning == 'Warning' %}health-warning{% else %}good-condition{% endif %}">
+                                    {{ row.health_condition_warning }}
+                                </td>
+                                <td>{{ row.cvd_condition }}</td>
+                                <td class="{% if row.cvd_condition_warning == 'Warning' %}cvd-warning{% else %}good-condition{% endif %}">
+                                    {{ row.cvd_condition_warning }}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
                 </div>
-               </div>
+            </div>
+
             </div>
         <!-- Content End -->
 
