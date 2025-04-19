@@ -52,8 +52,10 @@ def fetch_patient_data():
 
 
 # Define your Raspberry Pi API base URL (replace with actual IP or hostname of Pi)
-RPI_API_BASE = "http://192.168.8.100:5050"  # Update this URL
-
+RPI_API_BASE = "http://localhost:5050"  # Update this URL
+AUTH_HEADER = {
+    'Authorization': 'Bearer o92F2N30vZ1y9n84KDLsQ8kx3OeKZsmv'
+}
 
 @app.route('/device_configuration')
 def device_configuration():
@@ -69,7 +71,7 @@ def reboot_device():
         headers = {
             'Authorization': 'Bearer o92F2N30vZ1y9n84KDLsQ8kx3OeKZsmv'  # Replace with your actual token
         }
-        response = requests.post("http://192.168.8.100:5050/reboot", headers=headers, timeout=5)
+        response = requests.post("http://localhost:5050/reboot", headers=headers, timeout=5)
 
         if response.status_code == 200:
             return jsonify({'status': 'success', 'message': 'Reboot initiated.'})
@@ -90,7 +92,7 @@ def shutdown_device():
             'Authorization': 'Bearer o92F2N30vZ1y9n84KDLsQ8kx3OeKZsmv'  # Replace with your actual token
         }
 
-        response = requests.post("http://192.168.8.100:5050/shutdown", headers=headers, timeout=5)
+        response = requests.post("http://localhost:5050/shutdown", headers=headers, timeout=5)
 
         if response.status_code == 200:
             return jsonify({'status': 'success', 'message': 'Shutdown initiated.'})
@@ -104,8 +106,100 @@ def shutdown_device():
     except Exception as e:
         return jsonify({'status': 'error', 'message': str(e)}), 500
 
+@app.route('/restart-service', methods=['POST'])
+def restart_service():
+    try:
+        payload = request.get_json()
+        response = requests.post("http://localhost:5050/service/restart", headers=AUTH_HEADER, json=payload)
+        return jsonify(response.json()), response.status_code
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)}), 500
 
 
+@app.route('/stop-service', methods=['POST'])
+def stop_service():
+    try:
+        payload = request.get_json()
+        response = requests.post("http://localhost:5050/service/stop", headers=AUTH_HEADER, json=payload)
+        return jsonify(response.json()), response.status_code
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+
+@app.route('/start-service', methods=['POST'])
+def start_service():
+    try:
+        payload = request.get_json()
+        response = requests.post("http://localhost:5050/service/start", headers=AUTH_HEADER, json=payload)
+        return jsonify(response.json()), response.status_code
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+
+@app.route('/cpu-status', methods=['GET'])
+def cpu_status():
+    try:
+        # Fetching CPU status from the external service
+        response = requests.get("http://localhost:5050/status/cpu", headers=AUTH_HEADER)
+
+        # Checking if the response is successful (status code 200)
+        if response.status_code == 200:
+            return jsonify(response.json()), response.status_code
+        else:
+            return jsonify({'status': 'error',
+                            'message': f'Failed to fetch CPU status. Status code: {response.status_code}'}), response.status_code
+
+    except Exception as e:
+        # Returning an error message in case of an exception
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+
+@app.route('/memory-status', methods=['GET'])
+def memory_status():
+    try:
+        # Fetching Memory status from the external service
+        response = requests.get("http://localhost:5050/status/memory", headers=AUTH_HEADER)
+
+        # Checking if the response is successful (status code 200)
+        if response.status_code == 200:
+            return jsonify(response.json()), response.status_code
+        else:
+            return jsonify({'status': 'error',
+                            'message': f'Failed to fetch memory status. Status code: {response.status_code}'}), response.status_code
+
+    except Exception as e:
+        # Returning an error message in case of an exception
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+
+@app.route('/active-services', methods=['GET'])
+def active_services():
+    try:
+        response = requests.get("http://localhost:5050/status/services", headers=AUTH_HEADER)
+        return jsonify(response.json()), response.status_code
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+
+@app.route('/train-svm', methods=['POST'])
+def train_svm():
+    try:
+        payload = request.get_json()
+        response = requests.post("http://localhost:5050/train-svm/", headers=AUTH_HEADER, json=payload)
+
+        # Check if the response is valid JSON
+        try:
+            response_data = response.json()
+        except ValueError:
+            return jsonify({'status': 'error', 'message': 'Invalid JSON response from the server'}), 500
+
+        return jsonify(response_data), response.status_code
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+@app.route('/experimental-data', methods=['GET'])
+def experimental_data():
+    return render_template('experimental.html')
 
 # Route for the home page (index.html)
 @app.route('/')
@@ -345,6 +439,8 @@ def logout():
     session.pop('user', None)  # Remove the user from the session
     return redirect(url_for('sign'))
 
+
+
 @app.route('/patient_chart', methods=['GET', 'POST'])
 def patient_chart():
     try:
@@ -379,6 +475,13 @@ def patient_chart():
         oxygen_levels = user_df['oxygen_saturation'].tolist()
         heart_rates = user_df['heart_rate'].tolist()
 
+        # Define a mapping function
+        def map_condition(value):
+            return "Good" if value == 1 else "Bad" if value == 0 else "Unknown"
+
+        # Fetch health_condition and cvd_condition
+        health_condition = map_condition(user_df['health_condition'].iloc[-1]) if not user_df.empty else "Unknown"
+        cvd_condition = map_condition(user_df['cvd_condition'].iloc[-1]) if not user_df.empty else "Unknown"
         # Get all users to populate dropdown
         cursor.execute('SELECT userid, name FROM "user";')
         patients = cursor.fetchall()
@@ -391,7 +494,9 @@ def patient_chart():
                                selected_userid=userid,
                                timestamps=timestamps,
                                oxygen_levels=oxygen_levels,
-                               heart_rates=heart_rates)
+                               heart_rates=heart_rates,
+                               health_condition=health_condition,
+                               cvd_condition=cvd_condition)
 
     except Exception as e:
         return f"<h2>Error:</h2><pre>{str(e)}</pre>"

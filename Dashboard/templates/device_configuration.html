@@ -31,6 +31,7 @@
     <!-- Template Stylesheet -->
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/patients.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/device_confi.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -43,19 +44,16 @@
                     <h3 class="text-primary"><i></i>MediMy</h3>
                 </a>
                 <div class="navbar-nav w-100">
-                    <a href="/dashboard" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="/dashboard" class="nav-item nav-link "><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
-                        <a href="/assign_device" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Device</a>
+                        <a href="/assign_device" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2 "></i>Device</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="/assign_device" class="dropdown-item">Assign Device</a>
-                            <a href="/delete_device" class="dropdown-item">Delete Devices</a>
                             <a href="/device_configuration" class="dropdown-item">Device Configuration</a>
                         </div>
                     </div>
                     <a href="/patients" class="nav-item nav-link"><i class="fa fa-th me-2"></i>patients</a>
-                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
-                    <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
-                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
+                    <a href="/experimental-data" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Experimental</a>
                 </div>
             </nav>
         </div>
@@ -101,10 +99,18 @@
                 <h2>Service Control</h2>
                 <form id="service-form" action="/device_configuration" method="POST">
                     <label for="service_name">Service Name:</label>
-                    <input type="text" id="service_name" placeholder="Enter service name" required />
-                    <button id="start-service" type="submit" class="btn btn-success">Start Service</button>
-                    <button id="stop-service" type="submit" class="btn btn-danger">Stop Service</button>
-                    <button id="restart-service" type="submit" class="btn btn-warning">Restart Service</button>
+            <!-- Dropdown for service names -->
+                    <select id="service_name" required>
+                        <!-- Example static options, you can dynamically generate these via JS if needed -->
+                        <option value="" disabled selected>Select a service</option>
+                        <option value="service1">Service 1</option>
+                        <option value="service2">Service 2</option>
+                        <option value="service3">Service 3</option>
+                        <!-- Add more service options as needed -->
+                    </select>
+                    <button id="start-service" type="submit" class="btn btn-success" onclick="startService()">Start Service</button>
+                    <button id="stop-service" type="submit" class="btn btn-danger" onclick="stopService()">Stop Service</button>
+                    <button id="restart-service" type="submit" class="btn btn-warning" onclick="restartService()">Restart Service</button>
                 </form>
             </div>
 
@@ -112,13 +118,22 @@
                 <h2>System Monitoring</h2>
                 <div id="cpu-status">
                     <h3>CPU Status</h3>
-                    <p>Loading...</p>
+                    <div class="progress">
+                        <div id="cpu-progress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                            0%
+                        </div>
+                    </div>
                 </div>
                 <div id="memory-status">
                     <h3>Memory Status</h3>
-                    <p>Loading...</p>
+                    <div class="progress">
+                        <div id="memory-progress" class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                            0%
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <!-- End of New Section -->
 
             <!-- Status Slide -->
@@ -180,8 +195,117 @@
         }
 
 
+        function restartService(serviceName) {
+            fetch('/restart-service', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ service: serviceName })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('status').innerText = data.message || JSON.stringify(data);
+            })
+            .catch(error => {
+                document.getElementById('status').innerText = 'Error: ' + error;
+            });
+        }
+
+        function stopService(serviceName) {
+            fetch('/stop-service', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ service: serviceName })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('status').innerText = data.message || JSON.stringify(data);
+            })
+            .catch(error => {
+                document.getElementById('status').innerText = 'Error: ' + error;
+            });
+        }
+
+        function startService(serviceName) {
+            fetch('/start-service', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ service: serviceName })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('status').innerText = data.message || JSON.stringify(data);
+            })
+            .catch(error => {
+                document.getElementById('status').innerText = 'Error: ' + error;
+            });
+        }
+
+        function updateCpuStatus() {
+            fetch('/cpu-status')
+                .then(response => response.json())
+                .then(data => {
+                    const cpuUsage = data.cpu_percent;
+                    const cpuProgress = document.getElementById('cpu-progress');
+                    cpuProgress.style.width = `${cpuUsage}%`;
+                    cpuProgress.setAttribute('aria-valuenow', cpuUsage);
+                    cpuProgress.textContent = `${cpuUsage}%`;
+                })
+                .catch(error => console.error('Error fetching CPU status:', error));
+        }
+
+        function updateMemoryStatus() {
+            fetch('/memory-status')
+                .then(response => response.json())
+                .then(data => {
+                    const memoryUsage = data.percent;
+                    const memoryProgress = document.getElementById('memory-progress');
+                    memoryProgress.style.width = `${memoryUsage}%`;
+                    memoryProgress.setAttribute('aria-valuenow', memoryUsage);
+                    memoryProgress.textContent = `${memoryUsage}%`;
+                })
+                .catch(error => console.error('Error fetching memory status:', error));
+        }
+
+        setInterval(() => {
+            updateCpuStatus();
+            updateMemoryStatus();
+        }, 1000);
 
 
+
+        function getActiveServices() {
+            fetch('/active-services')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('status').innerText = JSON.stringify(data);
+            })
+            .catch(error => {
+                document.getElementById('status').innerText = 'Error: ' + error;
+            });
+        }
+
+        function trainSvm(params) {
+            fetch('/train-svm', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(params)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('status').innerText = data.message || JSON.stringify(data);
+            })
+            .catch(error => {
+                document.getElementById('status').innerText = 'Error: ' + error;
+            });
+        }
 
     </script>
 
