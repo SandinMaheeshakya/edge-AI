@@ -307,4 +307,4 @@ if __name__ == "__main__":
             data_with_cvd_predictions = run_cvd_classification_model(data_with_health_predictions,device)
             upload_data_s3(data_with_cvd_predictions)
             
-        time.sleep(30)
+        time.sleep(1)
