@@ -1,0 +1,14 @@
+[Unit]
+Description=Medimy Machine Learning Model Service
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/home/pi/MediMy/medimy_env/bin/python /home/pi/MediMy/ml_service.py
+WorkingDirectory=/home/pi/MediMy
+Restart=always
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

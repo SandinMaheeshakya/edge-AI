@@ -1,0 +1,12 @@
+[Unit]
+Description=Reverse SSH Tunnel on port 5050
+After=network.target
+
+[Service]
+User=pi
+ExecStart=/usr/bin/ssh -i "/home/pi/First Key.pem" -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -N -R 5050:0.0.0.0:5050 ubuntu@43.205.162.210
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
