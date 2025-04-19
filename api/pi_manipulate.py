@@ -1,0 +1,37 @@
+from fastapi import FastAPI, HTTPException, Depends
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from typing import List, Union, Optional
+from pydantic import BaseModel
+from custom_model_training import train_custom_svm
+import subprocess
+import os
+import psutil
+
+app = FastAPI(
+    title="Pi Control API",
+    description="API for controlling Raspberry Pi services, models, and system operations securely.",
+    version="1.0.0"
+)
+
+
+
+class SVMTrainRequest(BaseModel):
+    C: Optional[float] = 1.0
+    gamma: Optional[Union[str, float]] = "scale"
+    kernel: Optional[str] = "rbf"
+    test_size: Optional[float] = 0.2
+    random_state: Optional[int] = 42
+    features: List[str] = ["heart_rate","oxygen_saturation"]
+    target_column: str = "healthcare_target"
+
+@app.post("/train-svm/")
+def train_svm(request: SVMTrainRequest, _: str = Depends(verify_api_key)):
+    result = train_custom_svm(request.dict())
+    return {
+        "message": "Model trained successfully!",
+        "accuracy": round(result["accuracy"], 4),
+        "classification_report": result["report"],
+        "parameters": result["params"],
+        "test_size": result["test_size"],
+        "features_used": result["features_used"]
+    }
