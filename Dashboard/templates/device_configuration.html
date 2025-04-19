@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>MediMy</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="{{ url_for('static', filename='img/favicon.ico') }}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css') }}" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+
+    <!-- Template Stylesheet -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/patients.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/device_confi.css') }}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid position-relative bg-white d-flex p-0">
+
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-light navbar-light">
+                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"><i></i>MediMy</h3>
+                </a>
+                <div class="navbar-nav w-100">
+                    <a href="/dashboard" class="nav-item nav-link "><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <div class="nav-item dropdown">
+                        <a href="/assign_device" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2 "></i>Device</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="/assign_device" class="dropdown-item">Assign Device</a>
+                            <a href="/device_configuration" class="dropdown-item">Device Configuration</a>
+                        </div>
+                    </div>
+                    <a href="/patients" class="nav-item nav-link"><i class="fa fa-th me-2"></i>patients</a>
+                    <a href="/experimental-data" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Experimental</a>
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
+                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <form class="d-none d-md-flex ms-4">
+                    <input class="form-control border-0" type="search" placeholder="Search">
+                </form>
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div class="nav-item dropdown">
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">My Profile</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <a href="/logout" class="dropdown-item">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+
+            <!-- Content Start -->
+
+            <!-- New: System Control and Monitoring -->
+            <div class="container-fluid pt-4 px-4">
+                <h2>System Control</h2>
+                <div class="form-group">
+                    <button id="shutdown" class="btn btn-danger" onclick="shutdown()">Shutdown</button>
+                    <button id="reboot" class="btn btn-warning" onclick="reboot()">Reboot</button>
+                </div>
+            </div>
+
+            <div class="container-fluid pt-4 px-4">
+                <h2>Service Control</h2>
+                <form id="service-form" action="/device_configuration" method="POST">
+                    <label for="service_name">Service Name:</label>
+            <!-- Dropdown for service names -->
+                    <select id="service_name" required>
+                        <!-- Example static options, you can dynamically generate these via JS if needed -->
+                        <option value="" disabled selected>Select a service</option>
+                        <option value="service1">Service 1</option>
+                        <option value="service2">Service 2</option>
+                        <option value="service3">Service 3</option>
+                        <!-- Add more service options as needed -->
+                    </select>
+                    <button id="start-service" type="submit" class="btn btn-success" onclick="startService()">Start Service</button>
+                    <button id="stop-service" type="submit" class="btn btn-danger" onclick="stopService()">Stop Service</button>
+                    <button id="restart-service" type="submit" class="btn btn-warning" onclick="restartService()">Restart Service</button>
+                </form>
+            </div>
+
+            <div class="container-fluid pt-4 px-4">
+                <h2>System Monitoring</h2>
+                <div id="cpu-status">
+                    <h3>CPU Status</h3>
+                    <div class="progress">
+                        <div id="cpu-progress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                            0%
+                        </div>
+                    </div>
+                </div>
+                <div id="memory-status">
+                    <h3>Memory Status</h3>
+                    <div class="progress">
+                        <div id="memory-progress" class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                            0%
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End of New Section -->
+
+            <!-- Status Slide -->
+            <div id="status" class="slide-section">
+                <div class="container-fluid pt-4 px-4">
+                    <p>Status: <span class="badge bg-success">Online</span></p>
+                    <p>Model Status: <span class="badge bg-success">Running</span></p>
+                </div>
+            </div>
+        </div>
+        <!-- Content End -->
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='lib/chart/chart.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/tempusdominus/js/moment.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/tempusdominus/js/moment-timezone.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/patients.js') }}"></script>
+
+    <!-- System Control and Monitoring JavaScript -->
+    <script>
+
+     function reboot() {
+            fetch('/reboot-device', {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('status').innerText = data.message;
+            })
+            .catch(error => {
+                document.getElementById('status').innerText = 'Error: ' + error;
+            });
+        }
+
+      function shutdown() {
+            fetch('/shutdown-device', {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('status').innerText = data.message;
+            })
+            .catch(error => {
+                document.getElementById('status').innerText = 'Error: ' + error;
+            });
+        }
+
+
+        function restartService(serviceName) {
+            fetch('/restart-service', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ service: serviceName })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('status').innerText = data.message || JSON.stringify(data);
+            })
+            .catch(error => {
+                document.getElementById('status').innerText = 'Error: ' + error;
+            });
+        }
+
+        function stopService(serviceName) {
+            fetch('/stop-service', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ service: serviceName })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('status').innerText = data.message || JSON.stringify(data);
+            })
+            .catch(error => {
+                document.getElementById('status').innerText = 'Error: ' + error;
+            });
+        }
+
+        function startService(serviceName) {
+            fetch('/start-service', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ service: serviceName })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('status').innerText = data.message || JSON.stringify(data);
+            })
+            .catch(error => {
+                document.getElementById('status').innerText = 'Error: ' + error;
+            });
+        }
+
+        function updateCpuStatus() {
+            fetch('/cpu-status')
+                .then(response => response.json())
+                .then(data => {
+                    const cpuUsage = data.cpu_percent;
+                    const cpuProgress = document.getElementById('cpu-progress');
+                    cpuProgress.style.width = `${cpuUsage}%`;
+                    cpuProgress.setAttribute('aria-valuenow', cpuUsage);
+                    cpuProgress.textContent = `${cpuUsage}%`;
+                })
+                .catch(error => console.error('Error fetching CPU status:', error));
+        }
+
+        function updateMemoryStatus() {
+            fetch('/memory-status')
+                .then(response => response.json())
+                .then(data => {
+                    const memoryUsage = data.percent;
+                    const memoryProgress = document.getElementById('memory-progress');
+                    memoryProgress.style.width = `${memoryUsage}%`;
+                    memoryProgress.setAttribute('aria-valuenow', memoryUsage);
+                    memoryProgress.textContent = `${memoryUsage}%`;
+                })
+                .catch(error => console.error('Error fetching memory status:', error));
+        }
+
+        setInterval(() => {
+            updateCpuStatus();
+            updateMemoryStatus();
+        }, 1000);
+
+
+
+        function getActiveServices() {
+            fetch('/active-services')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('status').innerText = JSON.stringify(data);
+            })
+            .catch(error => {
+                document.getElementById('status').innerText = 'Error: ' + error;
+            });
+        }
+
+        function trainSvm(params) {
+            fetch('/train-svm', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(params)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('status').innerText = data.message || JSON.stringify(data);
+            })
+            .catch(error => {
+                document.getElementById('status').innerText = 'Error: ' + error;
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

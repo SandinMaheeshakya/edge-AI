@@ -1,0 +1,85 @@
+
+
+/* Progress bar container */
+.progress {
+    height: 30px;
+    background-color: #e9ecef;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 10px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* CPU progress bar */
+#cpu-progress {
+    background-color: #007bff;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    transition: width 0.5s ease;
+}
+
+/* Memory progress bar */
+#memory-progress {
+    background-color: #28a745;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    transition: width 0.5s ease;
+}
+
+/* Section spacing */
+#cpu-status, #memory-status {
+    margin-bottom: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container-fluid h2 {
+        font-size: 20px;
+    }
+
+    .progress {
+        height: 25px;
+    }
+
+    #cpu-progress, #memory-progress {
+        font-size: 12px;
+        line-height: 25px;
+    }
+}
+
+/* Style for the select dropdown */
+#service_name {
+    width: 100%; /* Full width */
+    max-width: 300px; /* Limit the width */
+    padding: 10px; /* Add padding for better appearance */
+    font-size: 16px; /* Adjust font size */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background color */
+    color: #333; /* Text color */
+    appearance: none; /* Remove default browser styles */
+    outline: none; /* Remove focus outline */
+    transition: border-color 0.3s ease; /* Smooth transition for border */
+}
+
+/* Add hover effect */
+#service_name:hover {
+    border-color: #007bff; /* Change border color on hover */
+}
+
+/* Add focus effect */
+#service_name:focus {
+    border-color: #007bff; /* Highlight border on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add shadow effect */
+}
+
+/* Style for the dropdown arrow */
+#service_name::-ms-expand {
+    display: none; /* Hide default arrow in IE */
+}

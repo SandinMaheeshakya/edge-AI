@@ -1,0 +1,78 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container styling */
+.container-fluid, .container {
+    padding: 20px;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Table Head Row */
+thead tr {
+    background-color: #0d6efd;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* Header and data cells */
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 13px;
+}
+
+/* Hover effect on table rows */
+tbody tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease;
+}
+
+/* Zebra striping */
+tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* Button Styling */
+button.btn-danger {
+    padding: 8px 12px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.btn-danger:hover {
+    background-color: #c82333;
+    transition: background-color 0.3s ease;
+}
+
+/* Bold warnings or bad conditions */
+td.health-warning,
+td.cvd-warning {
+    font-weight: bold;
+    color: red;
+}
+
+/* Good condition color (optional) */
+td.good-condition {
+    color: green;
+}
