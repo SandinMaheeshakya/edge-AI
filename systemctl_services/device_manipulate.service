@@ -1,0 +1,12 @@
+[Unit]
+Description=FastAPI End Device Manipulation Service
+After=network.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/MediMy/api
+ExecStart=/home/pi/MediMy/medimy_env/bin/uvicorn pi_manipulate:app --host 0.0.0.0 --port 5050
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
