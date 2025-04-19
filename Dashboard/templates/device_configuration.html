@@ -36,7 +36,6 @@
 <body>
     <div class="container-fluid position-relative bg-white d-flex p-0">
 
-
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
@@ -61,7 +60,6 @@
             </nav>
         </div>
         <!-- Sidebar End -->
-
 
         <!-- Content Start -->
         <div class="content">
@@ -88,54 +86,54 @@
             </nav>
             <!-- Navbar End -->
 
+            <!-- Content Start -->
 
-            <!-- Assign Device Slide -->
-            <div id="assignDevice" class="slide-section">
-                <div class="container-fluid pt-4 px-4">
-                    <div class="assign-device">
-                        <h2>Assign Device</h2>
-                        <form method="POST" action="/assign_device">
-                            <div class="mb-3">
-                                <label for="deviceId" class="form-label">Device ID</label>
-                                <select class="form-control" id="deviceId" name="device_id" required>
-                                    {% for device in devices %}
-                                        <option value="{{ device.device_id }}">{{ device.device_id }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="patientId" class="form-label">Patient</label>
-                                <select class="form-control" id="patientId" name="user_id" required>
-                                    {% for user in users %}
-                                        <option value="{{ user.userid }}">{{ user.name }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Assign</button>
-                        </form>
-                        {% if success %}
-                            <div class="alert alert-success mt-3">{{ success }}</div>
-                        {% endif %}
-                        {% if error %}
-                            <div class="alert alert-danger mt-3">{{ error }}</div>
-                        {% endif %}
-                    </div>
+            <!-- New: System Control and Monitoring -->
+            <div class="container-fluid pt-4 px-4">
+                <h2>System Control</h2>
+                <div class="form-group">
+                    <button id="shutdown" class="btn btn-danger" onclick="shutdown()">Shutdown</button>
+                    <button id="reboot" class="btn btn-warning" onclick="reboot()">Reboot</button>
                 </div>
             </div>
 
+            <div class="container-fluid pt-4 px-4">
+                <h2>Service Control</h2>
+                <form id="service-form" action="/device_configuration" method="POST">
+                    <label for="service_name">Service Name:</label>
+                    <input type="text" id="service_name" placeholder="Enter service name" required />
+                    <button id="start-service" type="submit" class="btn btn-success">Start Service</button>
+                    <button id="stop-service" type="submit" class="btn btn-danger">Stop Service</button>
+                    <button id="restart-service" type="submit" class="btn btn-warning">Restart Service</button>
+                </form>
+            </div>
 
+            <div class="container-fluid pt-4 px-4">
+                <h2>System Monitoring</h2>
+                <div id="cpu-status">
+                    <h3>CPU Status</h3>
+                    <p>Loading...</p>
+                </div>
+                <div id="memory-status">
+                    <h3>Memory Status</h3>
+                    <p>Loading...</p>
+                </div>
+            </div>
+            <!-- End of New Section -->
 
-
-
+            <!-- Status Slide -->
+            <div id="status" class="slide-section">
+                <div class="container-fluid pt-4 px-4">
+                    <p>Status: <span class="badge bg-success">Online</span></p>
+                    <p>Model Status: <span class="badge bg-success">Running</span></p>
+                </div>
+            </div>
+        </div>
         <!-- Content End -->
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
-    </div>
-
-
-
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -148,19 +146,44 @@
     <script src="{{ url_for('static', filename='lib/tempusdominus/js/moment-timezone.min.js') }}"></script>
     <script src="{{ url_for('static', filename='lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 
-
     <!-- Template Javascript -->
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     <script src="{{ url_for('static', filename='js/patients.js') }}"></script>
-            <script>
-                function showSlide(sectionId) {
-                    const sections = document.querySelectorAll('.slide-section');
-                    sections.forEach(section => {
-                        section.style.display = 'none';
-                    });
-                    document.getElementById(sectionId).style.display = 'block';
-                }
-            </script>
+
+    <!-- System Control and Monitoring JavaScript -->
+    <script>
+
+     function reboot() {
+            fetch('/reboot-device', {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('status').innerText = data.message;
+            })
+            .catch(error => {
+                document.getElementById('status').innerText = 'Error: ' + error;
+            });
+        }
+
+      function shutdown() {
+            fetch('/shutdown-device', {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('status').innerText = data.message;
+            })
+            .catch(error => {
+                document.getElementById('status').innerText = 'Error: ' + error;
+            });
+        }
+
+
+
+
+
+    </script>
 
 </body>
 

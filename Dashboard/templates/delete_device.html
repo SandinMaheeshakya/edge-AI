@@ -31,6 +31,7 @@
     <!-- Template Stylesheet -->
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/patients.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/delete_device.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -64,75 +65,43 @@
 
 
         <!-- Content Start -->
-        <div class="content">
-            <!-- Navbar Start -->
-            <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
-                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
-                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
-                </a>
-                <a href="#" class="sidebar-toggler flex-shrink-0">
-                    <i class="fa fa-bars"></i>
-                </a>
-                <form class="d-none d-md-flex ms-4">
-                    <input class="form-control border-0" type="search" placeholder="Search">
-                </form>
-                <div class="navbar-nav align-items-center ms-auto">
-                    <div class="nav-item dropdown">
-                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">My Profile</a>
-                            <a href="#" class="dropdown-item">Settings</a>
-                            <a href="/logout" class="dropdown-item">Log Out</a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-            <!-- Navbar End -->
-
-
-            <!-- Assign Device Slide -->
-            <div id="assignDevice" class="slide-section">
-                <div class="container-fluid pt-4 px-4">
-                    <div class="assign-device">
-                        <h2>Assign Device</h2>
-                        <form method="POST" action="/assign_device">
-                            <div class="mb-3">
-                                <label for="deviceId" class="form-label">Device ID</label>
-                                <select class="form-control" id="deviceId" name="device_id" required>
-                                    {% for device in devices %}
-                                        <option value="{{ device.device_id }}">{{ device.device_id }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="patientId" class="form-label">Patient</label>
-                                <select class="form-control" id="patientId" name="user_id" required>
-                                    {% for user in users %}
-                                        <option value="{{ user.userid }}">{{ user.name }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Assign</button>
-                        </form>
-                        {% if success %}
-                            <div class="alert alert-success mt-3">{{ success }}</div>
-                        {% endif %}
-                        {% if error %}
-                            <div class="alert alert-danger mt-3">{{ error }}</div>
-                        {% endif %}
-                    </div>
-                </div>
+        <!-- Content Start -->
+        <div class="container-fluid pt-4 px-4">
+            <h2 class="text-primary mb-0">Assigned devices</h2>
+            <div class="container mt-4">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Assignment ID</th>
+                            <th scope="col">User ID</th>
+                            <th scope="col">Device Name</th>
+                            <th scope="col">Assigned At</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for assignment in assignments %}
+                            <tr>
+                                <td>{{ assignment.assignment_id }}</td>
+                                <td>{{ assignment.userid }}</td>
+                                <td>{{ assignment.device_id }}</td>
+                                <td>{{ assignment.assigned_at }}</td>
+                                <td>
+                                    <form action="/unassign_device" method="POST">
+                                        <input type="hidden" name="assignment_id" value="{{ assignment.assignment_id }}">
+                                        <button type="submit" class="btn btn-danger">Unassign</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
-
-
-
-
-
+        </div>
         <!-- Content End -->
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    </div>
-    </div>
+
+
 
 
 
@@ -151,16 +120,16 @@
 
     <!-- Template Javascript -->
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/patients.js') }}"></script>
-            <script>
-                function showSlide(sectionId) {
-                    const sections = document.querySelectorAll('.slide-section');
-                    sections.forEach(section => {
-                        section.style.display = 'none';
-                    });
-                    document.getElementById(sectionId).style.display = 'block';
-                }
-            </script>
+    <script>
+    function toggleDeleteDevice() {
+        var deleteDeviceSection = document.getElementById('deleteDevice');
+        if (deleteDeviceSection.style.display === 'none') {
+            deleteDeviceSection.style.display = 'block';
+        } else {
+            deleteDeviceSection.style.display = 'none';
+        }
+    }
+    </script>
 
 </body>
 

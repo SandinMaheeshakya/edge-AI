@@ -42,10 +42,16 @@
                 <a href="index.html" class="navbar-brand mx-4 mb-3">
                     <h3 class="text-primary"><i></i>MediMy</h3>
                 </a>
-            
                 <div class="navbar-nav w-100">
                     <a href="/dashboard" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="assign_device" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Device</a>
+                    <div class="nav-item dropdown">
+                        <a href="/assign_device" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Device</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="/assign_device" class="dropdown-item">Assign Device</a>
+                            <a href="/delete_device" class="dropdown-item">Delete Devices</a>
+                            <a href="/device_configuration" class="dropdown-item">Device Configuration</a>
+                        </div>
+                    </div>
                     <a href="/patients" class="nav-item nav-link"><i class="fa fa-th me-2"></i>patients</a>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
                     <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
@@ -198,51 +204,28 @@
                     <div class="col-sm-12 col-md-6 col-xl-4">
                         <div class="h-100 bg-light rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-2">
-                                <h6 class="mb-0">Messages</h6>
-                                <a href="">Show All</a>
+                                <h6 class="mb-0">Top Heart Rates</h6>
+                                <a href="#">Show All</a>
                             </div>
-                            <div class="d-flex align-items-center border-bottom py-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
+
+                            {% for patient in top_bpm_patients %}
+                            <div class="border-bottom py-2">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-0">{{ patient.name }}</h6>
+                                    <small>{{ patient.timestamp }}</small>
+                                </div>
+                                <div>
+                                    <span class="text-danger fw-bold">Heart Rate: {{ patient.bpm }} bpm</span>
                                 </div>
                             </div>
-                            <div class="d-flex align-items-center border-bottom py-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center pt-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">Jhon Doe</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
+                            {% endfor %}
+
+                            {% if top_bpm_patients|length == 0 %}
+                            <p class="text-muted">No data available.</p>
+                            {% endif %}
                         </div>
                     </div>
+
                     <div class="col-sm-12 col-md-6 col-xl-4">
                         <div class="h-100 bg-light rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-4">
@@ -314,62 +297,31 @@
             <!-- Widgets End -->
 
 
-
-            <!-- Sales Chart Start -->
+            <!-- Patient Filter -->
             <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Oxygen Level Trends</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="worldwide-sales"></canvas>
-                        </div>
+            <form method="GET" action="/patient_chart" class="mb-3">
+                <select name="userid" class="form-select" onchange="this.form.submit()">
+                    <option value="">Select Patient</option>
+                    {% for patient in patients %}
+                        <option value="{{ patient.userid }}" {% if patient.userid|string == selected_userid|string %}selected{% endif %}>{{ patient.name }}</option>
+                    {% endfor %}
+                </select>
+            </form>
+
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="bg-light text-center rounded p-4">
+                        <h6>Oxygen Level Trends</h6>
+                        <canvas id="oxygenChart"></canvas>
                     </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Oxygen Level Statistics</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="salse-revenue"></canvas>
-                        </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="bg-light text-center rounded p-4">
+                        <h6>Heart Rate Trends</h6>
+                        <canvas id="heartChart"></canvas>
                     </div>
                 </div>
             </div>
-            <!-- Sales Chart End -->
-
-
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <!-- Database Data -->
-                    <div class="col-sm-12">
-                        <div class="bg-light text-center rounded p-4">
-                            <h6 class="mb-4">Patient Data from Database</h6>
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>Patient ID</th>
-                                        <th>Name</th>
-                                        <th>Age</th>
-                                        <th>Oxygen Level</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for record in db_data %}
-                                    <tr>
-                                        <td>{{ record.patient_id }}</td>
-                                        <td>{{ record.name }}</td>
-                                        <td>{{ record.age }}</td>
-                                        <td>{{ record.oxygen_level }}</td>
-                                    </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
             </div>
 
 
@@ -465,11 +417,45 @@
     <script src="{{ url_for('static', filename='lib/tempusdominus/js/moment.min.js') }}"></script>
     <script src="{{ url_for('static', filename='lib/tempusdominus/js/moment-timezone.min.js') }}"></script>
     <script src="{{ url_for('static', filename='lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+    <script>
+        const timestamps = {{ timestamps|tojson }};
+        const oxygenLevels = {{ oxygen_levels|tojson }};
+        const heartRates = {{ heart_rates|tojson }};
+
+        new Chart(document.getElementById('oxygenChart'), {
+            type: 'line',
+            data: {
+                labels: timestamps,
+                datasets: [{
+                    label: 'Oxygen Saturation (%)',
+                    data: oxygenLevels,
+                    borderColor: 'yellow',
+                    fill: false
+                }]
+            }
+        });
+
+        new Chart(document.getElementById('heartChart'), {
+            type: 'line',
+            data: {
+                labels: timestamps,
+                datasets: [{
+                    label: 'Heart Rate (bpm)',
+                    data: heartRates,
+                    borderColor: 'red',
+                    fill: false
+                }]
+            }
+        });
+    </script>
+
 
 
 
     <!-- Template Javascript -->
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </body>
 
 </html>

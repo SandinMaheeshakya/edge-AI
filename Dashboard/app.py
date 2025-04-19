@@ -1,10 +1,12 @@
 import pymysql
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session,jsonify
 import boto3
 import pandas as pd
 from io import StringIO
 import psycopg2
 from psycopg2.extras import RealDictCursor
+import requests
+
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Needed for sessions
@@ -47,6 +49,62 @@ def fetch_patient_data():
 
     # Convert each row to dict
     return df.to_dict(orient='records')
+
+
+# Define your Raspberry Pi API base URL (replace with actual IP or hostname of Pi)
+RPI_API_BASE = "http://192.168.8.100:5050"  # Update this URL
+
+
+@app.route('/device_configuration')
+def device_configuration():
+    # Fetch system information (CPU and memory) from the Pi API
+    cpu_status = requests.get(f"{RPI_API_BASE}/status/cpu").json()
+    memory_status = requests.get(f"{RPI_API_BASE}/status/memory").json()
+    return render_template('device_configuration.html', cpu_status=cpu_status, memory_status=memory_status)
+
+
+@app.route('/reboot-device', methods=['POST'])
+def reboot_device():
+    try:
+        headers = {
+            'Authorization': 'Bearer o92F2N30vZ1y9n84KDLsQ8kx3OeKZsmv'  # Replace with your actual token
+        }
+        response = requests.post("http://192.168.8.100:5050/reboot", headers=headers, timeout=5)
+
+        if response.status_code == 200:
+            return jsonify({'status': 'success', 'message': 'Reboot initiated.'})
+        else:
+            return jsonify({
+                'status': 'error',
+                'message': f'Failed to initiate reboot. Status code: {response.status_code}',
+                'response': response.text
+            }), 500
+
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+@app.route('/shutdown-device', methods=['POST'])
+def shutdown_device():
+    try:
+        headers = {
+            'Authorization': 'Bearer o92F2N30vZ1y9n84KDLsQ8kx3OeKZsmv'  # Replace with your actual token
+        }
+
+        response = requests.post("http://192.168.8.100:5050/shutdown", headers=headers, timeout=5)
+
+        if response.status_code == 200:
+            return jsonify({'status': 'success', 'message': 'Shutdown initiated.'})
+        else:
+            return jsonify({
+                'status': 'error',
+                'message': f'Failed to initiate shutdown. Status code: {response.status_code}',
+                'response': response.text
+            }), 500
+
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+
 
 
 # Route for the home page (index.html)
@@ -97,14 +155,136 @@ def sign():
     return render_template('signin.html')
 
 # Route for the dashboard page
-@app.route('/dashboard')
+@app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
     if 'user' not in session:
-        # If the user is not logged in, redirect to the sign-in page
         return redirect(url_for('sign'))
 
-    # Display the dashboard content (user info or personalized content)
-    return render_template('index.html', user=session['user'])
+    try:
+        userid = request.args.get('userid')
+
+        # Load CSV from S3
+        obj = s3.get_object(Bucket='data-engineering-bucket', Key='device_output.csv')
+        csv_data = obj['Body'].read().decode('utf-8')
+        df = pd.read_csv(StringIO(csv_data))
+        df['timestamp'] = pd.to_datetime(df['timestamp'])
+
+        # Connect to DB
+        conn = connect_to_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+
+        # Get all patients for dropdown
+        cursor.execute('SELECT userid, name FROM "user";')
+        patients = cursor.fetchall()
+
+        oxygen_levels = []
+        heart_rates = []
+        timestamps = []
+        selected_userid = None
+
+
+
+        if userid:
+            selected_userid = userid
+
+            # Fetch the device ID assigned to this user
+            cursor.execute("SELECT device_id FROM assignments WHERE userid = %s;", (userid,))
+            assignment = cursor.fetchone()
+
+            if assignment:
+                device_id = assignment['device_id']
+                user_df = df[df['device_id'] == device_id].sort_values('timestamp')
+                oxygen_levels = user_df['oxygen_saturation'].tolist()
+                heart_rates = user_df['heart_rate'].tolist()
+                timestamps = user_df['timestamp'].dt.strftime('%Y-%m-%d %H:%M:%S').tolist()
+
+        cursor.close()
+        conn.close()
+
+        return render_template('index.html',
+                               user=session['user'],
+                               patients=patients,
+                               selected_userid=selected_userid,
+                               oxygen_levels=oxygen_levels,
+                               heart_rates=heart_rates,
+                               timestamps=timestamps,
+                               success=request.args.get('success'),
+                               error=request.args.get('error'),
+                               delete_success=request.args.get('delete_success'),
+                               delete_error=request.args.get('delete_error'))
+
+
+    except Exception as e:
+        return f"<h2>Error in Dashboard:</h2><pre>{str(e)}</pre>"
+
+
+@app.route('/delete_device', methods=['GET', 'POST'])
+def delete_device():
+    if 'user' not in session:
+        return redirect(url_for('sign'))
+
+    try:
+        connection = connect_to_db()
+        cursor = connection.cursor()
+
+        # Fetch all assignments
+        cursor.execute("SELECT * FROM assignments;")
+        assignments = cursor.fetchall()
+        print(assignments)  # Debugging line to check the data
+
+        cursor.close()
+        connection.close()
+
+        # Render the template with assignments
+        return render_template('delete_device.html', assignments=assignments)
+
+    except Exception as e:
+        print("Error:", e)
+        return render_template('delete_device.html', delete_error="An error occurred while fetching assignments.")
+
+
+@app.route('/unassign_device', methods=['POST'])
+def unassign_device():
+    if 'user' not in session:
+        return redirect(url_for('sign'))
+
+    # Get the assignment_id from the form submission
+    assignment_id = request.form.get('assignment_id')
+
+    try:
+        # Connect to the database
+        connection = connect_to_db()
+        cursor = connection.cursor()
+
+        # Check if the assignment exists using the assignment_id
+        cursor.execute("SELECT * FROM assignments WHERE assignment_id = %s;", (assignment_id,))
+        assignment = cursor.fetchone()
+
+        if not assignment:
+            # If no assignment is found, render with an error message
+            return render_template('delete_device.html', delete_error="No assignment found with this ID.")
+
+        # Unassign the device by setting device_id to NULL (without deleting the assignment)
+        cursor.execute("""
+            UPDATE assignments
+            SET device_id = NULL
+            WHERE assignment_id = %s;
+        """, (assignment_id,))
+
+        # Commit the changes to the database
+        connection.commit()
+
+        cursor.close()
+        connection.close()
+
+        # Redirect to the page with a success message
+        return redirect(url_for('delete_device', delete_success="Device unassigned successfully."))
+
+    except Exception as e:
+        print("Unassign error:", e)
+        # Render the page with an error message if an exception occurs
+        return render_template('delete_device.html', delete_error="An error occurred during unassigning the device.")
+
 
 
 @app.route('/patients')
@@ -165,24 +345,56 @@ def logout():
     session.pop('user', None)  # Remove the user from the session
     return redirect(url_for('sign'))
 
-def get_oxygen_level_data():
-    obj = s3.get_object(Bucket='data-engineering-bucket', Key='device_output.csv')
-    csv_data = obj['Body'].read().decode('utf-8')
-    df = pd.read_csv(StringIO(csv_data))
+@app.route('/patient_chart', methods=['GET', 'POST'])
+def patient_chart():
+    try:
+        userid = request.args.get('userid')
+        if not userid:
+            return redirect(url_for('dashboard'))
 
-    # Convert timestamp to datetime
-    df['timestamp'] = pd.to_datetime(df['timestamp'])
+        # Load CSV
+        obj = s3.get_object(Bucket='data-engineering-bucket', Key='device_output.csv')
+        csv_data = obj['Body'].read().decode('utf-8')
+        df = pd.read_csv(StringIO(csv_data))
 
-    # Group by time for trend
-    trend_df = df.groupby(['timestamp']).oxygen_saturation.mean().reset_index()
+        # DB Connection
+        conn = connect_to_db()
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
 
-    # Group by user/device for stats
-    stats_df = df.groupby('userid').oxygen_saturation.mean().reset_index()
+        # Fetch device_id for this user
+        cursor.execute("SELECT * FROM assignments WHERE userid = %s;", (userid,))
+        assignment = cursor.fetchone()
 
-    return {
-        "trend": trend_df.to_dict(orient='records'),
-        "stats": stats_df.to_dict(orient='records')
-    }
+        if not assignment:
+            return f"No device found for user ID {userid}"
+
+        device_id = assignment['device_id']
+        user_df = df[df['device_id'] == device_id]
+
+        # Sort by timestamp for trend plotting
+        user_df['timestamp'] = pd.to_datetime(user_df['timestamp'])
+        user_df = user_df.sort_values('timestamp')
+        timestamps = user_df['timestamp'].dt.strftime('%Y-%m-%d %H:%M:%S').tolist()
+        # Extract relevant data
+        oxygen_levels = user_df['oxygen_saturation'].tolist()
+        heart_rates = user_df['heart_rate'].tolist()
+
+        # Get all users to populate dropdown
+        cursor.execute('SELECT userid, name FROM "user";')
+        patients = cursor.fetchall()
+
+        cursor.close()
+        conn.close()
+
+        return render_template('index.html',
+                               patients=patients,
+                               selected_userid=userid,
+                               timestamps=timestamps,
+                               oxygen_levels=oxygen_levels,
+                               heart_rates=heart_rates)
+
+    except Exception as e:
+        return f"<h2>Error:</h2><pre>{str(e)}</pre>"
 
 
 @app.route('/assign_device', methods=['GET', 'POST'])
@@ -226,4 +438,4 @@ def assign_device():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
